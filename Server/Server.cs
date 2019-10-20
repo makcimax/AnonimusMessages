@@ -10,9 +10,54 @@ namespace Server
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
     public class Server : IServer
     {
-        private Base baseofData = new Base();
+       // private DataBase baseofData = new DataBase();
         private List<Abonent> allAbonents =  new List<Abonent>();
         private int idAbonent = 0;
+
+
+
+
+        private void PushMessage(int senderId,int recipientId,string textOfMessage)
+        {
+            using (var context = new DataBase()) 
+            {
+                var message = new MessageDb()
+                {
+                    SenderId = senderId,
+                    RecipientId = recipientId,
+                    TextOfMessage = textOfMessage
+                };
+
+                context.Messages.Add(message);
+                context.SaveChanges();
+            }
+        }
+
+
+        private List<MessageDb> PopMessage(int recipientId)
+        {
+            using (var context = new DataBase())
+            {
+                var messagesInDb = context.Messages.Where(i => (i.RecipientId == recipientId));
+
+
+                if (messagesInDb != null)
+                {
+                    foreach (var message in messagesInDb)
+                        context.Messages.Remove(message);
+                    return messagesInDb.ToList();
+                }
+                else
+                {
+                    return null;
+                }
+               
+            }
+
+            
+        }
+
+
         public void SendMessage(int senderId, string[] recipientNames, string message)
         {
             Abonent sender = allAbonents.Find(ab => ab.ID == senderId);
@@ -36,7 +81,8 @@ namespace Server
                     }
                     else
                     {
-                        //PushMessage() сохранить сообщение в базу данных
+
+                        PushMessage(senderId, recipient.ID, message); //сохранить сообщение в базу данных
                     }
                 }
             }
@@ -57,11 +103,24 @@ namespace Server
 
         private void ProvideMessage(int id) // мб его все таки включить в RPC и вызывать отдельно клиентом,чтобы не захламлять Connect
         {
-            //PopMessage() взять сообщение из базы данных
+            
+           
+   
+
             Abonent abonent = allAbonents.Find(ab => ab.ID == id);
-            string Message = "сообщение из базы данных";
-            string senderName = "Имя отправителя";
-            abonent.Callback.cbSendMessage(senderName, Message);
+            if (abonent.IsNewMessage)
+            {
+
+                var messagesInDb = PopMessage(abonent.ID); //взять сообщение из базы данных
+                //    
+                foreach (MessageDb message in messagesInDb)
+                {
+                    abonent.Callback.cbSendMessage(abonent.Name, message.TextOfMessage);
+                }
+                abonent.IsNewMessage = false;
+            }
+
+            
         }
         public int Connect(string name)
         {

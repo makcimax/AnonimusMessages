@@ -29,3 +29,16 @@ E:\Server 14.1019\ServerHost\obj\Debug\ServerHost.csproj.CoreCompileInputs.cache
 E:\Server 14.1019\ServerHost\obj\Debug\ServerHost.csproj.CopyComplete
 E:\Server 14.1019\ServerHost\obj\Debug\ServerHost.exe
 E:\Server 14.1019\ServerHost\obj\Debug\ServerHost.pdb
+C:\Users\PC\Desktop\Server 14.1019\ServerHost\bin\Debug\ServerHost.exe.config
+C:\Users\PC\Desktop\Server 14.1019\ServerHost\bin\Debug\ServerHost.exe
+C:\Users\PC\Desktop\Server 14.1019\ServerHost\bin\Debug\ServerHost.pdb
+C:\Users\PC\Desktop\Server 14.1019\ServerHost\bin\Debug\Server.dll
+C:\Users\PC\Desktop\Server 14.1019\ServerHost\bin\Debug\EntityFramework.dll
+C:\Users\PC\Desktop\Server 14.1019\ServerHost\bin\Debug\Server.pdb
+C:\Users\PC\Desktop\Server 14.1019\ServerHost\bin\Debug\Server.dll.config
+C:\Users\PC\Desktop\Server 14.1019\ServerHost\bin\Debug\EntityFramework.xml
+C:\Users\PC\Desktop\Server 14.1019\ServerHost\obj\Debug\ServerHost.csprojAssemblyReference.cache
+C:\Users\PC\Desktop\Server 14.1019\ServerHost\obj\Debug\ServerHost.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\Server 14.1019\ServerHost\obj\Debug\ServerHost.csproj.CopyComplete
+C:\Users\PC\Desktop\Server 14.1019\ServerHost\obj\Debug\ServerHost.exe
+C:\Users\PC\Desktop\Server 14.1019\ServerHost\obj\Debug\ServerHost.pdb
