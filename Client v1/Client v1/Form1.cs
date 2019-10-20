@@ -11,6 +11,7 @@ namespace Client_v1
     {
         ServerClient client;
         int id;
+        string nameInList;
 
         private void SendMethod()
         {
@@ -27,7 +28,7 @@ namespace Client_v1
 
         private void ConnectMethod()
         {
-            if (InputName.Text == null)
+            if (InputName.Text == "")
             {
                 MessageBox.Show("Incorrect data!");
                 ConnectButton.Enabled = true;
@@ -49,6 +50,8 @@ namespace Client_v1
                 InstanceContext instanceContext = new InstanceContext(this);
                 client = new ServerClient(instanceContext);
                 id = client.Connect(InputName.Text);
+                nameInList = id.ToString() + " " + InputName.Text;
+                AllABonents.Items.Add(nameInList);
 
             }
             
@@ -58,6 +61,7 @@ namespace Client_v1
         {
             InitializeComponent();
             this.ActiveControl = InputName;
+            
         }
 
         public void cbSendMessage(string senderName, string message)

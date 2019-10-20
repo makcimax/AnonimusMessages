@@ -80,6 +80,7 @@
             // 
             // OutputMessage
             // 
+            this.OutputMessage.BackColor = System.Drawing.SystemColors.Window;
             this.OutputMessage.Enabled = false;
             this.OutputMessage.Location = new System.Drawing.Point(258, 60);
             this.OutputMessage.Name = "OutputMessage";
