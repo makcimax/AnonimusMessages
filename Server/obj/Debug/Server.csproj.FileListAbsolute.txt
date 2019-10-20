@@ -1,0 +1,19 @@
+C:\Users\Xf13\Desktop\TEST\Server\Server\bin\Debug\Server.dll.config
+C:\Users\Xf13\Desktop\TEST\Server\Server\bin\Debug\Server.dll
+C:\Users\Xf13\Desktop\TEST\Server\Server\bin\Debug\Server.pdb
+C:\Users\Xf13\Desktop\TEST\Server\Server\obj\Debug\Server.csprojAssemblyReference.cache
+C:\Users\Xf13\Desktop\TEST\Server\Server\obj\Debug\Server.dll
+C:\Users\Xf13\Desktop\TEST\Server\Server\obj\Debug\Server.pdb
+C:\Users\Xf13\Desktop\Server 14.1019\Server\bin\Debug\Server.dll.config
+C:\Users\Xf13\Desktop\Server 14.1019\Server\bin\Debug\Server.dll
+C:\Users\Xf13\Desktop\Server 14.1019\Server\bin\Debug\Server.pdb
+C:\Users\Xf13\Desktop\Server 14.1019\Server\obj\Debug\Server.csprojAssemblyReference.cache
+C:\Users\Xf13\Desktop\Server 14.1019\Server\obj\Debug\Server.dll
+C:\Users\Xf13\Desktop\Server 14.1019\Server\obj\Debug\Server.pdb
+E:\Server 14.1019\Server\bin\Debug\Server.dll.config
+E:\Server 14.1019\Server\bin\Debug\Server.dll
+E:\Server 14.1019\Server\bin\Debug\Server.pdb
+E:\Server 14.1019\Server\obj\Debug\Server.csprojAssemblyReference.cache
+E:\Server 14.1019\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+E:\Server 14.1019\Server\obj\Debug\Server.dll
+E:\Server 14.1019\Server\obj\Debug\Server.pdb
