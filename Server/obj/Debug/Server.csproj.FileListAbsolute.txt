@@ -39,3 +39,15 @@ C:\Users\Xf13\Desktop\КМИ\Server 14.1019\Server\bin\Debug\EntityFramework.Sql
 C:\Users\Xf13\Desktop\КМИ\Server 14.1019\Server\bin\Debug\EntityFramework.xml
 C:\Users\Xf13\Desktop\КМИ\Server 14.1019\Server\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Xf13\Desktop\КМИ\Server 14.1019\Server\obj\Debug\Server.csproj.CopyComplete
+C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\Server\bin\Debug\Server.dll.config
+C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\Server\bin\Debug\Server.dll
+C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\Server\bin\Debug\Server.pdb
+C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\Server\bin\Debug\EntityFramework.dll
+C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\Server\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\Server\bin\Debug\EntityFramework.xml
+C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\Server\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\Server\obj\Debug\Server.csproj.CopyComplete
+C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\Server\obj\Debug\Server.dll
+C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\Server\obj\Debug\Server.pdb
+C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\Server\obj\Debug\Server.csprojAssemblyReference.cache

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Data.Entity;
+
 
 namespace Server
 {
@@ -73,7 +75,7 @@ namespace Server
                     }
                     else
                     {
-                        ////////////push
+                        PushMessage(sender.ID, index.ID, message);
                     }
                     
                 }
@@ -110,27 +112,24 @@ namespace Server
             }
         }
 
-        private void ProvideMessage(int id) // мб его все таки включить в RPC и вызывать отдельно клиентом,чтобы не захламлять Connect
-        {
+        //private void ProvideMessage(int id) // мб его все таки включить в RPC и вызывать отдельно клиентом,чтобы не захламлять Connect
+        //{
             
-           
-   
+        //    Abonent   = allAbonents.Find(ab => ab.ID == id);
+        //    //if (abonent.IsNewMessage)
+        //    {
 
-            Abonent abonent = allAbonents.Find(ab => ab.ID == id);
-            if (abonent.IsNewMessage)
-            {
-
-                var messagesInDb = PopMessage(abonent.ID); //взять сообщение из базы данных
-                //    
-                foreach (MessageDb message in messagesInDb)
-                {
-                    abonent.Callback.cbSendMessage(abonent.Name, message.TextOfMessage);
-                }
-                abonent.IsNewMessage = false;
-            }
+        //        var messagesInDb = PopMessage(abonent.ID); //взять сообщение из базы данных
+        //        //    
+        //        foreach (MessageDb message in messagesInDb)
+        //        {
+        //            abonent.Callback.cbSendMessage(abonent.Name, message.TextOfMessage);
+        //        }
+        //        abonent.IsNewMessage = false;
+        //    }
 
             
-        }
+       // }
         public int Connect(string name)
         {
             Abonent abonent;
@@ -158,7 +157,7 @@ namespace Server
                 }
             }
 
-            //ProvideMessage(int id) //предоставить пользователю непринятые сообщения
+         //   ProvideMessage(abonent.ID); //предоставить пользователю непринятые сообщения
             Console.WriteLine("Подключился " + str + abonent.Name);
             return abonent.ID;
 

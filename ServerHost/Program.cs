@@ -17,6 +17,10 @@ namespace ServerHost
                 Console.WriteLine("Start host");
                 Console.ReadLine();
             }
+
+
+
+
         }
     }
 }
