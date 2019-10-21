@@ -12,6 +12,7 @@ namespace Client_v1
         ServerClient client;
         int id;
         string nameInList;
+        bool isConnected = false;
 
         private void SendMethod()
         {
@@ -50,11 +51,36 @@ namespace Client_v1
                 InstanceContext instanceContext = new InstanceContext(this);
                 client = new ServerClient(instanceContext);
                 id = client.Connect(InputName.Text);
-                nameInList = id.ToString() + " " + InputName.Text;
-                AllABonents.Items.Add(nameInList);
+                isConnected = true;
+                nameInList = InputName.Text+" — Online";
+
+                if (AllABonents.Items.Contains(InputName.Text + " — Offline"))
+                    AllABonents.Items[id] = nameInList;
+                else
+                    AllABonents.Items.Add(nameInList);
+                this.ActiveControl = InputMessage;
 
             }
             
+        }
+
+        private void DisconnectMethod()
+        {
+            client.Disconnect(id);
+            client = null;
+            OutputMessage.Text = string.Empty;
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            AllABonents.Items[id] = InputName.Text + " — Offline";
+            this.ControlBox = false;
+            InputName.ReadOnly = false;
+            this.ControlBox = false;
+            this.Text = "Login";
+            this.AllABonents.Enabled = false;
+            this.InputMessage.Enabled = false;
+            this.SendButton.Enabled = false;
+            this.OutputMessage.Enabled = false;
+            ConnectButton.Text = "Connect";
+            isConnected = false;
         }
 
         public Form1()
@@ -70,6 +96,7 @@ namespace Client_v1
             else
             {
                 OutputMessage.Text += senderName + ": " + message + "\r";
+               
             }
         }
 
@@ -80,12 +107,13 @@ namespace Client_v1
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            if(ConnectButton.Text == "Connect")
+            if(!isConnected)
             {
                 ConnectMethod();
             }
             else
             {
+                DisconnectMethod();
                 MessageBox.Show("Disconnect is done");
             }
         }
@@ -107,13 +135,18 @@ namespace Client_v1
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
+            if(isConnected)
+                DisconnectMethod();
+
             Application.Exit();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
 
-            //ДИсконнект
+            if (isConnected)
+                DisconnectMethod();
+
             Application.Exit();
         }
     }
