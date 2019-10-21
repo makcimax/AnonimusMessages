@@ -7,7 +7,8 @@ using System.Text;
 
 namespace Server
 {
-    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single,
+        ConcurrencyMode =ConcurrencyMode.Multiple)]
     public class Server : IServer
     {
        // private DataBase baseofData = new DataBase();
@@ -66,7 +67,15 @@ namespace Server
             {
                 foreach (Abonent index in allAbonents)
                 {
-                    index.Callback.cbSendMessage(sender.Name, message);
+                    if (index.Status) 
+                    {
+                        index.Callback.cbSendMessage(sender.Name, message);
+                    }
+                    else
+                    {
+                        ////////////push
+                    }
+                    
                 }
                 Console.WriteLine(sender.Name + " отправил всем сообщение");
             }
