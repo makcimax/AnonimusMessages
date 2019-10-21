@@ -37,6 +37,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
             this.AllABonents = new System.Windows.Forms.CheckedListBox();
+            this.MessagePanel = new System.Windows.Forms.Panel();
+            this.MessagePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // InputName
@@ -59,8 +61,11 @@
             // 
             // InputMessage
             // 
+            this.InputMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.InputMessage.Enabled = false;
-            this.InputMessage.Location = new System.Drawing.Point(258, 371);
+            this.InputMessage.Location = new System.Drawing.Point(0, 0);
             this.InputMessage.Name = "InputMessage";
             this.InputMessage.Size = new System.Drawing.Size(449, 67);
             this.InputMessage.TabIndex = 3;
@@ -69,8 +74,9 @@
             // 
             // SendButton
             // 
+            this.SendButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.SendButton.Enabled = false;
-            this.SendButton.Location = new System.Drawing.Point(714, 393);
+            this.SendButton.Location = new System.Drawing.Point(452, 24);
             this.SendButton.Name = "SendButton";
             this.SendButton.Size = new System.Drawing.Size(75, 23);
             this.SendButton.TabIndex = 4;
@@ -80,6 +86,8 @@
             // 
             // OutputMessage
             // 
+            this.OutputMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.OutputMessage.BackColor = System.Drawing.SystemColors.Window;
             this.OutputMessage.Enabled = false;
             this.OutputMessage.Location = new System.Drawing.Point(258, 60);
@@ -110,12 +118,26 @@
             // 
             // AllABonents
             // 
+            this.AllABonents.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.AllABonents.Enabled = false;
             this.AllABonents.FormattingEnabled = true;
             this.AllABonents.Location = new System.Drawing.Point(12, 12);
             this.AllABonents.Name = "AllABonents";
             this.AllABonents.Size = new System.Drawing.Size(240, 424);
             this.AllABonents.TabIndex = 6;
+            // 
+            // MessagePanel
+            // 
+            this.MessagePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MessagePanel.Controls.Add(this.SendButton);
+            this.MessagePanel.Controls.Add(this.InputMessage);
+            this.MessagePanel.Location = new System.Drawing.Point(258, 371);
+            this.MessagePanel.Name = "MessagePanel";
+            this.MessagePanel.Size = new System.Drawing.Size(530, 67);
+            this.MessagePanel.TabIndex = 8;
             // 
             // Form1
             // 
@@ -125,17 +147,18 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AllABonents);
             this.Controls.Add(this.OutputMessage);
-            this.Controls.Add(this.SendButton);
-            this.Controls.Add(this.InputMessage);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.ConnectButton);
             this.Controls.Add(this.InputName);
+            this.Controls.Add(this.MessagePanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.MessagePanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,6 +174,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.CheckedListBox AllABonents;
+        private System.Windows.Forms.Panel MessagePanel;
     }
 }
 
