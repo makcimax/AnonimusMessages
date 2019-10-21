@@ -54,7 +54,6 @@ namespace Server
         public void SendMessage(int senderId, string[] recipientNames, string message)
         {
             Abonent sender = allAbonents.Find(ab => ab.ID == senderId);
-            Console.WriteLine(sender.Name + " отправляет всем сообщение");
             if (recipientNames == null) //оправить всем
             {
                 foreach (Abonent index in allAbonents)
