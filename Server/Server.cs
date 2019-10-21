@@ -10,19 +10,19 @@ using System.Data.Entity;
 namespace Server
 {
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single,
-        ConcurrencyMode =ConcurrencyMode.Multiple)]
+        ConcurrencyMode = ConcurrencyMode.Multiple)]
     public class Server : IServer
     {
-       // private DataBase baseofData = new DataBase();
-        private List<Abonent> allAbonents =  new List<Abonent>();
+        // private DataBase baseofData = new DataBase();
+        private List<Abonent> allAbonents = new List<Abonent>();
         private int idAbonent = 0;
 
 
 
 
-        private void PushMessage(int senderId,int recipientId,string textOfMessage)
+        private void PushMessage(int senderId, int recipientId, string textOfMessage)
         {
-            using (var context = new DataBase()) 
+            using (var context = new DataBase())
             {
                 var message = new MessageDb()
                 {
@@ -54,10 +54,10 @@ namespace Server
                 {
                     return null;
                 }
-               
+
             }
 
-            
+
         }
 
 
@@ -69,7 +69,7 @@ namespace Server
             {
                 foreach (Abonent index in allAbonents)
                 {
-                    if (index.Status) 
+                    if (index.Status)
                     {
                         index.Callback.cbSendMessage(sender.Name, message);
                     }
@@ -77,7 +77,7 @@ namespace Server
                     {
                         PushMessage(sender.ID, index.ID, message);
                     }
-                    
+
                 }
                 Console.WriteLine(sender.Name + " отправил всем сообщение");
             }
@@ -97,24 +97,24 @@ namespace Server
                     }
                 }
             }
-           
-           
+
+
         }
         public void ShowAbonents(int id)
         {
             Abonent abonent = allAbonents.Find(ab => ab.ID == id); //мб быстрее будет вызвать напрямую  OperationContext.Current.GetCallbackChannel<IMessageCallback>() ?
             foreach (Abonent index in allAbonents) // и стоит ли вообще вызывать столько callbackов, мб стоит добавить еще одну функцию cbShowAbonents(string[]names ,string[] status)
             {
-               if (index.ID != id)
-               {
-                   abonent.Callback.cbShowAbonent(index.Name, index.Status);
-               }
+                if (index.ID != id)
+                {
+                    abonent.Callback.cbShowAbonent(index.Name, index.Status);
+                }
             }
         }
 
         //private void ProvideMessage(int id) // мб его все таки включить в RPC и вызывать отдельно клиентом,чтобы не захламлять Connect
         //{
-            
+
         //    Abonent   = allAbonents.Find(ab => ab.ID == id);
         //    //if (abonent.IsNewMessage)
         //    {
@@ -128,8 +128,8 @@ namespace Server
         //        abonent.IsNewMessage = false;
         //    }
 
-            
-       // }
+
+        // }
         public int Connect(string name)
         {
             Abonent abonent;
@@ -157,12 +157,12 @@ namespace Server
                 }
             }
 
-         //   ProvideMessage(abonent.ID); //предоставить пользователю непринятые сообщения
+            //   ProvideMessage(abonent.ID); //предоставить пользователю непринятые сообщения
             Console.WriteLine("Подключился " + str + abonent.Name);
             return abonent.ID;
 
         }
-        public void Disconnect(int id) 
+        public void Disconnect(int id)
         {
             Abonent abonent = allAbonents.Find(ab => ab.ID == id);
             abonent.Status = false;
