@@ -157,9 +157,21 @@ namespace Server
         public void Disconnect(int id)
         {
             Abonent abonent = allAbonents.Find(ab => ab.ID == id);
+            if(abonent.Status == false)
+            {
+                Console.WriteLine("Абонент уже отключен");
+                return;
+            }
             Console.WriteLine("Отключился " + abonent.Name);
             abonent.Status = false;
             abonent.Callback = null;
+            foreach (Abonent index in allAbonents)
+            {
+                if (index.Status && index.ID != abonent.ID)
+                {
+                    index.Callback.cbShowAbonent(abonent.Name, false);
+                }
+            }
         }
     }
 }
