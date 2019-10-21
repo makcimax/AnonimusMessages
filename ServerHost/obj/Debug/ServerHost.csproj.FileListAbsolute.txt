@@ -69,3 +69,17 @@ C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\ServerHost\obj\Debug\ServerHo
 C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\ServerHost\obj\Debug\ServerHost.pdb
 C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\ServerHost\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\ServerHost\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\ServerHost\bin\Debug\ServerHost.exe.config
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\ServerHost\bin\Debug\ServerHost.exe
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\ServerHost\bin\Debug\ServerHost.pdb
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\ServerHost\bin\Debug\EntityFramework.dll
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\ServerHost\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\ServerHost\bin\Debug\Server.dll
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\ServerHost\bin\Debug\Server.pdb
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\ServerHost\bin\Debug\Server.dll.config
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\ServerHost\bin\Debug\EntityFramework.xml
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\ServerHost\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\ServerHost\obj\Debug\ServerHost.csprojAssemblyReference.cache
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\ServerHost\obj\Debug\ServerHost.csproj.CopyComplete
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\ServerHost\obj\Debug\ServerHost.exe
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\ServerHost\obj\Debug\ServerHost.pdb
