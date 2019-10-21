@@ -16,10 +16,6 @@ namespace Server
         // private DataBase baseofData = new DataBase();
         private List<Abonent> allAbonents = new List<Abonent>();
         private int idAbonent = 0;
-         
-
-
-
         private void PushMessage(int senderId, int recipientId, string textOfMessage)
         {
             using (var context = new DataBase())
@@ -35,8 +31,6 @@ namespace Server
                 context.SaveChanges();
             }
         }
-
-
         private List<MessageDb> PopMessage(int recipientId)
         {
             using (var context = new DataBase())
@@ -56,11 +50,7 @@ namespace Server
                 }
 
             }
-
-
         }
-
-
         public void SendMessage(int senderId, string[] recipientNames, string message)
         {
             Abonent sender = allAbonents.Find(ab => ab.ID == senderId);
@@ -77,7 +67,6 @@ namespace Server
                     {
                         PushMessage(sender.ID, index.ID, message);
                     }
-
                 }
                 Console.WriteLine(sender.Name + " отправил всем сообщение");
             }
@@ -92,13 +81,10 @@ namespace Server
                     }
                     else
                     {
-
                         PushMessage(senderId, recipient.ID, message); //сохранить сообщение в базу данных
                     }
                 }
             }
-
-
         }
         public void ShowAbonents(int id)
         {
@@ -136,8 +122,14 @@ namespace Server
             string str;
             if (allAbonents.Exists(ab => ab.Name == name))
             {
-                str = "существующий ";
+                
                 abonent = allAbonents.Find(ab => ab.Name == name);
+                if (abonent.Status)
+                {
+                    Console.WriteLine("Попытка повторного входа!");
+                    return -1;
+                }
+                str = "существующий ";
                 abonent.Callback = OperationContext.Current.GetCallbackChannel<IMessageCallback>();
                 abonent.Status = true;
             }
@@ -157,7 +149,7 @@ namespace Server
                 }
             }
 
-            //   ProvideMessage(abonent.ID); //предоставить пользователю непринятые сообщения
+            //ProvideMessage(abonent.ID); //предоставить пользователю непринятые сообщения
             Console.WriteLine("Подключился " + str + abonent.Name);
             return abonent.ID;
 
@@ -165,6 +157,7 @@ namespace Server
         public void Disconnect(int id)
         {
             Abonent abonent = allAbonents.Find(ab => ab.ID == id);
+            Console.WriteLine("Отключился " + abonent.Name);
             abonent.Status = false;
             abonent.Callback = null;
         }
