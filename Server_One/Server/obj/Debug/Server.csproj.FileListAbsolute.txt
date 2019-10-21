@@ -1,0 +1,64 @@
+C:\Users\Xf13\Desktop\TEST\Server\Server\bin\Debug\Server.dll.config
+C:\Users\Xf13\Desktop\TEST\Server\Server\bin\Debug\Server.dll
+C:\Users\Xf13\Desktop\TEST\Server\Server\bin\Debug\Server.pdb
+C:\Users\Xf13\Desktop\TEST\Server\Server\obj\Debug\Server.csprojAssemblyReference.cache
+C:\Users\Xf13\Desktop\TEST\Server\Server\obj\Debug\Server.dll
+C:\Users\Xf13\Desktop\TEST\Server\Server\obj\Debug\Server.pdb
+C:\Users\Xf13\Desktop\Server 14.1019\Server\bin\Debug\Server.dll.config
+C:\Users\Xf13\Desktop\Server 14.1019\Server\bin\Debug\Server.dll
+C:\Users\Xf13\Desktop\Server 14.1019\Server\bin\Debug\Server.pdb
+C:\Users\Xf13\Desktop\Server 14.1019\Server\obj\Debug\Server.csprojAssemblyReference.cache
+C:\Users\Xf13\Desktop\Server 14.1019\Server\obj\Debug\Server.dll
+C:\Users\Xf13\Desktop\Server 14.1019\Server\obj\Debug\Server.pdb
+E:\Server 14.1019\Server\bin\Debug\Server.dll.config
+E:\Server 14.1019\Server\bin\Debug\Server.dll
+E:\Server 14.1019\Server\bin\Debug\Server.pdb
+E:\Server 14.1019\Server\obj\Debug\Server.csprojAssemblyReference.cache
+E:\Server 14.1019\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+E:\Server 14.1019\Server\obj\Debug\Server.dll
+E:\Server 14.1019\Server\obj\Debug\Server.pdb
+C:\Users\PC\Desktop\Server 14.1019\Server\bin\Debug\Server.dll.config
+C:\Users\PC\Desktop\Server 14.1019\Server\bin\Debug\Server.dll
+C:\Users\PC\Desktop\Server 14.1019\Server\bin\Debug\Server.pdb
+C:\Users\PC\Desktop\Server 14.1019\Server\bin\Debug\EntityFramework.dll
+C:\Users\PC\Desktop\Server 14.1019\Server\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\PC\Desktop\Server 14.1019\Server\bin\Debug\EntityFramework.xml
+C:\Users\PC\Desktop\Server 14.1019\Server\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\PC\Desktop\Server 14.1019\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\Server 14.1019\Server\obj\Debug\Server.csproj.CopyComplete
+C:\Users\PC\Desktop\Server 14.1019\Server\obj\Debug\Server.dll
+C:\Users\PC\Desktop\Server 14.1019\Server\obj\Debug\Server.pdb
+C:\Users\Xf13\Desktop\КМИ\Server 14.1019\Server\obj\Debug\Server.csprojAssemblyReference.cache
+C:\Users\Xf13\Desktop\КМИ\Server 14.1019\Server\obj\Debug\Server.dll
+C:\Users\Xf13\Desktop\КМИ\Server 14.1019\Server\obj\Debug\Server.pdb
+C:\Users\Xf13\Desktop\КМИ\Server 14.1019\Server\bin\Debug\Server.dll.config
+C:\Users\Xf13\Desktop\КМИ\Server 14.1019\Server\bin\Debug\Server.dll
+C:\Users\Xf13\Desktop\КМИ\Server 14.1019\Server\bin\Debug\Server.pdb
+C:\Users\Xf13\Desktop\КМИ\Server 14.1019\Server\bin\Debug\EntityFramework.dll
+C:\Users\Xf13\Desktop\КМИ\Server 14.1019\Server\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Xf13\Desktop\КМИ\Server 14.1019\Server\bin\Debug\EntityFramework.xml
+C:\Users\Xf13\Desktop\КМИ\Server 14.1019\Server\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Xf13\Desktop\КМИ\Server 14.1019\Server\obj\Debug\Server.csproj.CopyComplete
+C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\Server\bin\Debug\Server.dll.config
+C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\Server\bin\Debug\Server.dll
+C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\Server\bin\Debug\Server.pdb
+C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\Server\bin\Debug\EntityFramework.dll
+C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\Server\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\Server\bin\Debug\EntityFramework.xml
+C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\Server\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\Server\obj\Debug\Server.csproj.CopyComplete
+C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\Server\obj\Debug\Server.dll
+C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\Server\obj\Debug\Server.pdb
+C:\Users\PC\Desktop\21.10.19\КМИ\Server 14.1019\Server\obj\Debug\Server.csprojAssemblyReference.cache
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\Server\bin\Debug\Server.dll.config
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\Server\bin\Debug\Server.dll
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\Server\bin\Debug\Server.pdb
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\Server\bin\Debug\EntityFramework.dll
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\Server\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\Server\bin\Debug\EntityFramework.xml
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\Server\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\Server\obj\Debug\Server.csprojAssemblyReference.cache
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\Server\obj\Debug\Server.csproj.CopyComplete
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\Server\obj\Debug\Server.dll
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\Server\obj\Debug\Server.pdb
