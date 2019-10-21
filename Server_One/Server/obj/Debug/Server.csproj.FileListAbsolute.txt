@@ -62,3 +62,15 @@ C:\Users\Xf13\Desktop\REP\AnonimusMessages\Server\obj\Debug\Server.csprojAssembl
 C:\Users\Xf13\Desktop\REP\AnonimusMessages\Server\obj\Debug\Server.csproj.CopyComplete
 C:\Users\Xf13\Desktop\REP\AnonimusMessages\Server\obj\Debug\Server.dll
 C:\Users\Xf13\Desktop\REP\AnonimusMessages\Server\obj\Debug\Server.pdb
+C:\Users\PC\Desktop\ourProg\AnonimusMessages\Server_One\Server\bin\Debug\Server.dll.config
+C:\Users\PC\Desktop\ourProg\AnonimusMessages\Server_One\Server\bin\Debug\Server.dll
+C:\Users\PC\Desktop\ourProg\AnonimusMessages\Server_One\Server\bin\Debug\Server.pdb
+C:\Users\PC\Desktop\ourProg\AnonimusMessages\Server_One\Server\bin\Debug\EntityFramework.dll
+C:\Users\PC\Desktop\ourProg\AnonimusMessages\Server_One\Server\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\PC\Desktop\ourProg\AnonimusMessages\Server_One\Server\bin\Debug\EntityFramework.xml
+C:\Users\PC\Desktop\ourProg\AnonimusMessages\Server_One\Server\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\PC\Desktop\ourProg\AnonimusMessages\Server_One\Server\obj\Debug\Server.csprojAssemblyReference.cache
+C:\Users\PC\Desktop\ourProg\AnonimusMessages\Server_One\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\ourProg\AnonimusMessages\Server_One\Server\obj\Debug\Server.csproj.CopyComplete
+C:\Users\PC\Desktop\ourProg\AnonimusMessages\Server_One\Server\obj\Debug\Server.dll
+C:\Users\PC\Desktop\ourProg\AnonimusMessages\Server_One\Server\obj\Debug\Server.pdb

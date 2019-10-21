@@ -10,7 +10,7 @@ using System.Data.Entity;
 namespace Server
 {
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single,
-        ConcurrencyMode = ConcurrencyMode.Multiple)]
+        ConcurrencyMode = ConcurrencyMode.Reentrant)]
     public class Server : IServer
     {
         // private DataBase baseofData = new DataBase();
@@ -35,22 +35,16 @@ namespace Server
         {
             using (var context = new DataBase())
             {
-                var messagesInDb = context.Messages.Where(i => (i.RecipientId == recipientId));
+                List<MessageDb> messagesInDb = (context.Messages.Where(i => i.RecipientId == recipientId)).ToList();
 
+                foreach (MessageDb message in messagesInDb)
+                    context.Messages.Remove(message);
 
-                if (messagesInDb != null)
-                {
-                    foreach (var message in messagesInDb)
-                        context.Messages.Remove(message);
-                    return messagesInDb.ToList();
-                }
-                else
-                {
-                    return null;
-                }
-
+                context.SaveChanges();
+                return messagesInDb;
             }
         }
+
         public void SendMessage(int senderId, string[] recipientNames, string message)
         {
             Abonent sender = allAbonents.Find(ab => ab.ID == senderId);
@@ -65,6 +59,7 @@ namespace Server
                     else
                     {
                         PushMessage(sender.ID, index.ID, message);
+                        index.IsNewMessage = true;
                     }
                 }
                 Console.WriteLine(sender.Name + " отправил всем сообщение");
@@ -81,6 +76,7 @@ namespace Server
                     else
                     {
                         PushMessage(senderId, recipient.ID, message); //сохранить сообщение в базу данных
+                        recipient.IsNewMessage = true;
                     }
                 }
             }
@@ -97,25 +93,25 @@ namespace Server
             }
         }
 
-        //private void ProvideMessage(int id) // мб его все таки включить в RPC и вызывать отдельно клиентом,чтобы не захламлять Connect
-        //{
+        private void ProvideMessage(int id) // мб его все таки включить в RPC и вызывать отдельно клиентом,чтобы не захламлять Connect
+        {
 
-        //    Abonent   = allAbonents.Find(ab => ab.ID == id);
-        //    //if (abonent.IsNewMessage)
-        //    {
+            Abonent abonent = allAbonents.Find(ab => ab.ID == id);
+            if (abonent.IsNewMessage)
+            {
 
-        //        var messagesInDb = PopMessage(abonent.ID); //взять сообщение из базы данных
-        //        //    
-        //        foreach (MessageDb message in messagesInDb)
-        //        {
-        //            abonent.Callback.cbSendMessage(abonent.Name, message.TextOfMessage);
-        //        }
-        //        abonent.IsNewMessage = false;
-        //    }
+                List<MessageDb> messagesInDb = PopMessage(abonent.ID); //взять сообщение из базы данных
+                //    
+                foreach (MessageDb message in messagesInDb)
+                {
+                    Abonent sender = allAbonents.Find(s => s.ID == message.SenderId);
+                    abonent.Callback.cbSendMessage(sender.Name, message.TextOfMessage);
+                }
+                abonent.IsNewMessage = false;
+            }
+        }
 
-
-        // }
-        public int Connect(string name)
+            public int Connect(string name)
         {
             Abonent abonent;
             string str;
@@ -147,8 +143,7 @@ namespace Server
                     index.Callback.cbShowAbonent(abonent.Name, true);
                 }
             }
-
-            //ProvideMessage(abonent.ID); //предоставить пользователю непринятые сообщения
+            ProvideMessage(abonent.ID); //предоставить пользователю непринятые сообщения
             Console.WriteLine("Подключился " + str + abonent.Name);
             return abonent.ID;
 
