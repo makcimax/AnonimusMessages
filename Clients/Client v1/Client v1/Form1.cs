@@ -17,7 +17,7 @@ namespace Client_v1
 
         private void SendMethod()
         {
-            if (InputMessage.Text == "")
+            if (InputMessage.Text.Trim() == "")
             {
                 return;
             }
@@ -26,7 +26,7 @@ namespace Client_v1
                 client.SendMessage(id, null, InputMessage.Text);
                 InputMessage.Text = string.Empty;
                 this.ActiveControl = InputMessage;
-                InputMessage.Clear();
+                //InputMessage.
             } 
         }
 
@@ -57,10 +57,10 @@ namespace Client_v1
                 nameInList = userName+" — Online";
                 client.ProvideMessage(id);
 
-                if (AllABonents.Items.Contains(InputName.Text + " — Offline"))
-                    AllABonents.Items[id] = nameInList;
-                else
-                    AllABonents.Items.Add(nameInList);
+                //if (AllABonents.Items.Contains(InputName.Text + " — Offline"))
+                //    AllABonents.Items[id] = nameInList;
+                //else
+                //    AllABonents.Items.Add(nameInList);
                 this.ActiveControl = InputMessage;
                 InputMessage.Focus();
 
@@ -96,14 +96,30 @@ namespace Client_v1
             
         }
 
+        private string RepeatStr(string str, int num)
+        {
+            string result = "";
+
+            for (int i = 0; i<num;++i)
+            {
+                result += str;
+            }
+            return result;
+        }
+
         public void cbSendMessage(string senderName, string message)
         {
-            //TODO 
-            //РАЗБЕРИСЬ С ФОРМАТИРОВАНИЕМ
-            message.Trim();
-            string chatString = senderName + ":\r";
-            chatString += new string(' ', senderName.Length) + message + "\t\t\t" + DateTime.Now + "\r";
-            OutputMessage.Text += chatString;   
+            if (InputMessage.Text == "")
+            {
+                return;
+            }
+            else
+            {
+                string chatString = senderName + ":\r";
+                chatString += RepeatStr(" ", 2 * senderName.Length) + message + "\t\t\t" + DateTime.Now + "\r";
+                OutputMessage.Text += chatString;
+            }
+            
         }
 
         public void cbShowAbonent(string abonentName, bool abonentStatus)
