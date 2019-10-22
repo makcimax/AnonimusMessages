@@ -16,6 +16,9 @@ namespace Server
         [OperationContract(IsOneWay = true)]
         void ShowAbonents(int id);
 
+        [OperationContract(IsOneWay = true)]
+        void ProvideMessage(int id);
+
         [OperationContract]
         int Connect(string name);
 

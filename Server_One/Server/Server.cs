@@ -10,7 +10,9 @@ using System.Data.Entity;
 namespace Server
 {
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single,
-        ConcurrencyMode = ConcurrencyMode.Reentrant)]
+        ConcurrencyMode = ConcurrencyMode.Reentrant//,
+       // UseSynchronizationContext =false 
+  )]
     public class Server : IServer
     {
         // private DataBase baseofData = new DataBase();
@@ -93,7 +95,7 @@ namespace Server
             }
         }
 
-        private void ProvideMessage(int id) // мб его все таки включить в RPC и вызывать отдельно клиентом,чтобы не захламлять Connect
+        public void ProvideMessage(int id) // мб его все таки включить в RPC и вызывать отдельно клиентом,чтобы не захламлять Connect
         {
 
             Abonent abonent = allAbonents.Find(ab => ab.ID == id);
@@ -143,7 +145,7 @@ namespace Server
                     index.Callback.cbShowAbonent(abonent.Name, true);
                 }
             }
-            ProvideMessage(abonent.ID); //предоставить пользователю непринятые сообщения
+            //ProvideMessage(abonent.ID); //предоставить пользователю непринятые сообщения
             Console.WriteLine("Подключился " + str + abonent.Name);
             return abonent.ID;
 

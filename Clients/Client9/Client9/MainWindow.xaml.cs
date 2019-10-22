@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.ServiceModel;
 using Client9.Service;
 
 namespace Client9
@@ -40,6 +41,7 @@ namespace Client9
             {
                 client = new ServerClient(new System.ServiceModel.InstanceContext(this));
                 ID = client.Connect(tbUserName.Text);
+                client.ProvideMessage(ID);
                 tbUserName.IsEnabled = false;
                 bConnDicon.Content = "Disconnect";
                 isConnected = true;

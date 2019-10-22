@@ -12,3 +12,17 @@ C:\Users\Xf13\Desktop\Client9\Client9\obj\Debug\Client9.Properties.Resources.res
 C:\Users\Xf13\Desktop\Client9\Client9\obj\Debug\Client9.csproj.GenerateResource.cache
 C:\Users\Xf13\Desktop\Client9\Client9\obj\Debug\Client9.exe
 C:\Users\Xf13\Desktop\Client9\Client9\obj\Debug\Client9.pdb
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\Clients\Client9\Client9\bin\Debug\Client9.exe.config
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\Clients\Client9\Client9\bin\Debug\Client9.exe
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\Clients\Client9\Client9\bin\Debug\Client9.pdb
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\Clients\Client9\Client9\obj\Debug\Client9.csprojAssemblyReference.cache
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\Clients\Client9\Client9\obj\Debug\MainWindow.g.cs
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\Clients\Client9\Client9\obj\Debug\App.g.cs
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\Clients\Client9\Client9\obj\Debug\Client9_MarkupCompile.cache
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\Clients\Client9\Client9\obj\Debug\Client9_MarkupCompile.lref
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\Clients\Client9\Client9\obj\Debug\MainWindow.baml
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\Clients\Client9\Client9\obj\Debug\Client9.g.resources
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\Clients\Client9\Client9\obj\Debug\Client9.Properties.Resources.resources
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\Clients\Client9\Client9\obj\Debug\Client9.csproj.GenerateResource.cache
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\Clients\Client9\Client9\obj\Debug\Client9.exe
+C:\Users\Xf13\Desktop\REP\AnonimusMessages\Clients\Client9\Client9\obj\Debug\Client9.pdb
