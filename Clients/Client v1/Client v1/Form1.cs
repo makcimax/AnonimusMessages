@@ -25,6 +25,8 @@ namespace Client_v1
             {
                 client.SendMessage(id, null, InputMessage.Text);
                 InputMessage.Text = string.Empty;
+                this.ActiveControl = InputMessage;
+                InputMessage.Clear();
             } 
         }
 
@@ -60,6 +62,7 @@ namespace Client_v1
                 else
                     AllABonents.Items.Add(nameInList);
                 this.ActiveControl = InputMessage;
+                InputMessage.Focus();
 
             }
             
@@ -95,10 +98,8 @@ namespace Client_v1
 
         public void cbSendMessage(string senderName, string message)
         {
-         
-                OutputMessage.Text += senderName + ": " + message + "\r";
-               
-         
+            string chatString = senderName + ":\r\t" + message + "\t\t\t" + DateTime.Now + "\r";
+            OutputMessage.Text += chatString;   
         }
 
         public void cbShowAbonent(string abonentName, bool abonentStatus)
@@ -115,7 +116,7 @@ namespace Client_v1
             else
             {
                 DisconnectMethod();
-                MessageBox.Show("Disconnect is done");
+                //MessageBox.Show("Disconnect is done");
             }
         }
 

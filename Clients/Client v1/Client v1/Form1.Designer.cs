@@ -122,6 +122,8 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.AllABonents.Enabled = false;
             this.AllABonents.FormattingEnabled = true;
+            this.AllABonents.Items.AddRange(new object[] {
+            "AllAbonents"});
             this.AllABonents.Location = new System.Drawing.Point(12, 12);
             this.AllABonents.Name = "AllABonents";
             this.AllABonents.Size = new System.Drawing.Size(240, 424);
