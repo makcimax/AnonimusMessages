@@ -98,7 +98,11 @@ namespace Client_v1
 
         public void cbSendMessage(string senderName, string message)
         {
-            string chatString = senderName + ":\r\t" + message + "\t\t\t" + DateTime.Now + "\r";
+            //TODO 
+            //РАЗБЕРИСЬ С ФОРМАТИРОВАНИЕМ
+            message.Trim();
+            string chatString = senderName + ":\r";
+            chatString += new string(' ', senderName.Length) + message + "\t\t\t" + DateTime.Now + "\r";
             OutputMessage.Text += chatString;   
         }
 
