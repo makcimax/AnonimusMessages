@@ -21,6 +21,9 @@
   <wsdl:message name="IServer_ShowAbonents_InputMessage">
     <wsdl:part name="parameters" element="tns:ShowAbonents" />
   </wsdl:message>
+  <wsdl:message name="IServer_ProvideMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProvideMessage" />
+  </wsdl:message>
   <wsdl:message name="IServer_Connect_InputMessage">
     <wsdl:part name="parameters" element="tns:Connect" />
   </wsdl:message>
@@ -42,6 +45,9 @@
     </wsdl:operation>
     <wsdl:operation name="ShowAbonents">
       <wsdl:input wsaw:Action="http://tempuri.org/IServer/ShowAbonents" message="tns:IServer_ShowAbonents_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvideMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServer/ProvideMessage" message="tns:IServer_ProvideMessage_InputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Connect">
       <wsdl:input wsaw:Action="http://tempuri.org/IServer/Connect" message="tns:IServer_Connect_InputMessage" />
@@ -68,6 +74,12 @@
     </wsdl:operation>
     <wsdl:operation name="ShowAbonents">
       <soap12:operation soapAction="http://tempuri.org/IServer/ShowAbonents" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ProvideMessage">
+      <soap12:operation soapAction="http://tempuri.org/IServer/ProvideMessage" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

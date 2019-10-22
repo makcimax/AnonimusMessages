@@ -12,6 +12,7 @@ namespace Client_v1
         ServerClient client;
         int id;
         string nameInList;
+        string userName;
         bool isConnected = false;
 
         private void SendMethod()
@@ -47,12 +48,12 @@ namespace Client_v1
                 this.ConnectButton.Text = "Disconnect";
                 this.InputName.ReadOnly = true;
 
-
-                InstanceContext instanceContext = new InstanceContext(this);
-                client = new ServerClient(instanceContext);
+                client = new ServerClient(new InstanceContext(this));
+                userName = InputName.Text;
                 id = client.Connect(InputName.Text);
                 isConnected = true;
-                nameInList = InputName.Text+" — Online";
+                nameInList = userName+" — Online";
+                client.ProvideMessage(id);
 
                 if (AllABonents.Items.Contains(InputName.Text + " — Offline"))
                     AllABonents.Items[id] = nameInList;
@@ -69,8 +70,10 @@ namespace Client_v1
             client.Disconnect(id);
             client = null;
             OutputMessage.Text = string.Empty;
+
+
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
-            AllABonents.Items[id] = InputName.Text + " — Offline";
+           // AllABonents.Items[id] = InputName.Text + " — Offline";
             this.ControlBox = false;
             InputName.ReadOnly = false;
             this.ControlBox = false;
@@ -92,17 +95,15 @@ namespace Client_v1
 
         public void cbSendMessage(string senderName, string message)
         {
-            if (message == "") return;
-            else
-            {
+         
                 OutputMessage.Text += senderName + ": " + message + "\r";
                
-            }
+         
         }
 
         public void cbShowAbonent(string abonentName, bool abonentStatus)
         {
-            throw new NotImplementedException();
+           
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
