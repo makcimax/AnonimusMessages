@@ -41,13 +41,14 @@ namespace Client10
                 Online = true;
 
 
-                OutputMessage.Enabled = true;
-                SendButton.Enabled = true;
-                InputMessage.Enabled = true;
-                AbonentList.Enabled = true;
+                OutputMessage.Enabled  = true;
+                SendButton.Enabled     = true;
+                InputMessage.Enabled   = true;
+                AbonentList.Enabled    = true;
                 ConnDisconnButton.Text = "Disconnect";
-                InputName.ReadOnly = true;
-                this.Text = userName;
+                InputName.ReadOnly     = true;
+                ShowButton.Enabled     = true;
+                this.Text              = userName;
 
                 client.ProvideMessage(id);
                 this.ActiveControl = InputMessage;
@@ -61,14 +62,15 @@ namespace Client10
             Online = false;
 
 
-            OutputMessage.Enabled = false;
+            OutputMessage.Enabled  = false;
             OutputMessage.Clear();
-            SendButton.Enabled = false;
-            InputMessage.Enabled = false;
-            AbonentList.Enabled = false;
+            SendButton.Enabled     = false;
+            InputMessage.Enabled   = false;
+            AbonentList.Enabled    = false;
             ConnDisconnButton.Text = "Connect";
-            InputName.ReadOnly = false;
-            this.Text = "Login";
+            InputName.ReadOnly     = false;
+            ShowButton.Enabled     = false;
+            this.Text              = "Login";
 
         }
 
@@ -105,7 +107,11 @@ namespace Client10
         }
         public void cbShowAbonent(string abonentName, bool abonentStatus)
         {
-            
+            string userList = abonentName;
+            userList += abonentStatus == true ? " is Online" : " is Offline";
+
+            if(AbonentList)
+            AbonentList.Items.Add(userList);
         }
 
         private void ConnDisconnButton_Click(object sender, EventArgs e)
@@ -149,6 +155,11 @@ namespace Client10
             {
                 SendMethod();
             }
+        }
+
+        private void ShowButton_Click(object sender, EventArgs e)
+        {
+            client.ShowAbonents(id);
         }
     }
 }
