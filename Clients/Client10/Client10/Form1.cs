@@ -17,40 +17,138 @@ namespace Client10
         int id;
         ServerClient client;
         string userName;
+        bool Online = false;
         public Form1()
         {
             InitializeComponent();
-            
+            this.ActiveControl = InputName;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void ConnectMethod()
         {
+            if (InputName.Text.Trim() == "")
+            {
+                MessageBox.Show("Incorrect data!!! Try again");
+                return;
+            }
+            else
+            {
+                InstanceContext i = new InstanceContext(this);
+                client = new ServerClient(i);
 
+                userName = InputName.Text;
+                id = client.Connect(userName);
+                Online = true;
+
+
+                OutputMessage.Enabled = true;
+                SendButton.Enabled = true;
+                InputMessage.Enabled = true;
+                AbonentList.Enabled = true;
+                ConnDisconnButton.Text = "Disconnect";
+                InputName.ReadOnly = true;
+                this.Text = userName;
+
+                client.ProvideMessage(id);
+                this.ActiveControl = InputMessage;
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void DisconnectMethod()
         {
+            client.Disconnect(id);
+            client = null;
+            Online = false;
 
-            InstanceContext i = new InstanceContext(this);
-            client = new ServerClient(i);
-          
-            userName = textBox1.Text;
-            id = client.Connect(userName);
-            client.ProvideMessage(id);
+
+            OutputMessage.Enabled = false;
+            OutputMessage.Clear();
+            SendButton.Enabled = false;
+            InputMessage.Enabled = false;
+            AbonentList.Enabled = false;
+            ConnDisconnButton.Text = "Connect";
+            InputName.ReadOnly = false;
+            this.Text = "Login";
+
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void SendMethod()
         {
-            client.SendMessage(id, null, richTextBox2.Text);
+            if (InputMessage.Text.Trim() == "")
+            {
+                return;
+            }
+            else
+            {
+                client.SendMessage(id, null, InputMessage.Text);
+                InputMessage.Clear();
+                this.ActiveControl = InputMessage;
+            }   
         }
+        private void ExitMethod()
+        {
+            if (Online)
+            {
+                DisconnectMethod();
+                Application.Exit();
+            }
+            else
+            {
+                Application.Exit();
+            }
+        }
+
 
         public void cbSendMessage(string senderName, string message)
         {
-            richTextBox1.Text += senderName + ": " + message;
+            OutputMessage.Text += senderName + ": " + message+"\r";
         }
         public void cbShowAbonent(string abonentName, bool abonentStatus)
         {
             
+        }
+
+        private void ConnDisconnButton_Click(object sender, EventArgs e)
+        {
+            if (Online)
+            {
+                DisconnectMethod();            
+            }
+            else
+            {
+                ConnectMethod();
+            }
+        }
+
+        private void SendButton_Click(object sender, EventArgs e)
+        {
+            SendMethod();
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            ExitMethod();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ExitMethod();
+        }
+
+        private void InputName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ConnectMethod();
+            }
+        }
+
+        private void InputMessage_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SendMethod();
+            }
         }
     }
 }
