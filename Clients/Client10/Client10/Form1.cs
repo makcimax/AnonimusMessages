@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Client10.Service;
 using System.ServiceModel;
@@ -15,7 +9,7 @@ namespace Client10
     public partial class Form1 : Form, IServerCallback
     {
         int id;
-        ServerClient client;
+        ServerClient client = null;
         string userName;
         bool Online = false;
         public Form1()
@@ -52,6 +46,7 @@ namespace Client10
 
                 client.ProvideMessage(id);
                 this.ActiveControl = InputMessage;
+                
             }
         }
 
@@ -71,7 +66,6 @@ namespace Client10
             InputName.ReadOnly     = false;
             ShowButton.Enabled     = false;
             this.Text              = "Login";
-
         }
 
         private void SendMethod()
@@ -107,11 +101,7 @@ namespace Client10
         }
         public void cbShowAbonent(string abonentName, bool abonentStatus)
         {
-            string userList = abonentName;
-            userList += abonentStatus == true ? " is Online" : " is Offline";
-
-            if(AbonentList)
-            AbonentList.Items.Add(userList);
+           
         }
 
         private void ConnDisconnButton_Click(object sender, EventArgs e)
