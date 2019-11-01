@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
+﻿using System.Collections.Generic;
 using System.ServiceModel;
-using System.Text;
 
 namespace Server
 {
@@ -11,15 +7,15 @@ namespace Server
     public interface IServer
     {
         [OperationContract(IsOneWay = true)]
-        void SendMessage(int senderId, string[] names, string message);
+        void SendMessage(int senderId, List<int> recipientsId, string message);
 
-        [OperationContract(IsOneWay = true)]
-        void ShowAbonents(int id);
+        [OperationContract(IsOneWay = false)]
+        List<Abonent> ShowAbonents(int id);
 
-        [OperationContract(IsOneWay = true)]
-        void ProvideMessage(int id);
+        [OperationContract(IsOneWay = false)]
+        List<Message> ProvideMessage(int id);
 
-        [OperationContract]
+        [OperationContract(IsOneWay = false)]
         int Connect(string name);
 
         [OperationContract(IsOneWay = true)]

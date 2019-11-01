@@ -1,6 +1,6 @@
 ﻿namespace Server
 {
-    public class MessageDb
+    public class Message
     {
 
 
@@ -8,7 +8,7 @@
 
         public int SenderId { get; set; }
         public int RecipientId{get; set;}
-    public string TextOfMessage{ get; set; }
+        public string TextOfMessage{ get; set; }
 
             //    public int SenderId { get { return _senderId; } set { _senderId= value; } }
            //   public int RecipientId { get { return _recipientId; } set { _recipientId = value; } }
