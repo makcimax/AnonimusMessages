@@ -86,16 +86,15 @@ namespace Server
                 }
             }
         }
-        public List<Abonent> ShowAbonents(int id)
+        public List<Abonent> ShowAbonents(int id) //убрать аргумент
         {
-            Abonent abonent = allAbonents.Find(ab => ab.id == id);
             return allAbonents;
         }
 
         public List<Message> ProvideMessage(int id)
         {
-            Abonent recipient = allAbonents.Find(ab => ab.id == id);
-            return PopMessage(recipient.id); 
+           // Abonent recipient = allAbonents.Find(ab => ab.id == id);
+            return PopMessage(allAbonents[id].id); 
         }
 
         public int Connect(string name)
