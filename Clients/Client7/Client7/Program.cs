@@ -21,9 +21,7 @@ namespace Client7
         }
     }
 
-
-
-class Program
+    class Program
     {
         static void Main(string[] args)
         {
@@ -51,8 +49,10 @@ class Program
                 if (a == "p")
                 {
                     var d = client.ProvideMessage(connectId);
+                    allAbonents = client.ShowAbonents(connectId);
                     foreach (var index in d)
                     {
+
                         Console.WriteLine(allAbonents[index.SenderId].name + " : " +index.TextOfMessage);
                     }
                 }
