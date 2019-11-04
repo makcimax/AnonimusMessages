@@ -27,6 +27,12 @@ namespace Client7.Server1 {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServer/ShowAbonents")]
         System.Threading.Tasks.Task ShowAbonentsAsync(int id);
         
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServer/ProvideMessage")]
+        void ProvideMessage(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServer/ProvideMessage")]
+        System.Threading.Tasks.Task ProvideMessageAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServer/Connect", ReplyAction="http://tempuri.org/IServer/ConnectResponse")]
         int Connect(string name);
         
@@ -92,6 +98,14 @@ namespace Client7.Server1 {
         
         public System.Threading.Tasks.Task ShowAbonentsAsync(int id) {
             return base.Channel.ShowAbonentsAsync(id);
+        }
+        
+        public void ProvideMessage(int id) {
+            base.Channel.ProvideMessage(id);
+        }
+        
+        public System.Threading.Tasks.Task ProvideMessageAsync(int id) {
+            return base.Channel.ProvideMessageAsync(id);
         }
         
         public int Connect(string name) {

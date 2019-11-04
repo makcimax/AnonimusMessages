@@ -39,6 +39,7 @@ class Program
                 if (a == "d") client.Disconnect(connectId);
                 if (a == "c") client.Connect(name);
                 if (a == "send") client.SendMessage(connectId, null, "Привет всем");
+                if (a == "p") client.ProvideMessage(connectId);
             }
           
 
