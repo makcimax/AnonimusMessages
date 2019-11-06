@@ -4,7 +4,7 @@ namespace Server
 {
     public class DataBase : DbContext
     {
-        public DataBase() : base("DbConnectionString")
+        public DataBase() : base("DbConnectionString1")
         {
         }
 
