@@ -132,7 +132,7 @@ namespace Server
             {
                 if (allAbonents[index].status == Status.Online && allAbonents[index].id != abonent.id)
                 {
-                    links[index].cbShowAbonent(abonent.name, abonent.status);
+                    links[index].cbShowAbonent(abonent);
                 }
             }
 
@@ -156,7 +156,7 @@ namespace Server
             {
                 if (allAbonents[index].status == Status.Online && allAbonents[index].id != abonent.id)
                 {
-                    links[index].cbShowAbonent(abonent.name, abonent.status);
+                    links[index].cbShowAbonent(abonent);
                 }
             }
         }

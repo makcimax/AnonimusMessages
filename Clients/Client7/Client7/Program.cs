@@ -15,9 +15,9 @@ namespace Client7
         {
             Console.WriteLine(senderName+ ":"+ message);
         }
-        public void cbShowAbonent(string abonentName, Status abonentStatus)
+        public void cbShowAbonent(Abonent abonent)
         {
-            Console.WriteLine(abonentName+" " + abonentStatus);
+            Console.WriteLine(abonent.name+" " + abonent.status);
         }
     }
 

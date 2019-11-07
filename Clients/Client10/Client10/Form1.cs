@@ -106,7 +106,7 @@ namespace Client10
         {
             OutputMessage.Text += senderName + ": " + message+"\r";
         }
-        public void cbShowAbonent(string abonentName, Status abonentStatus)
+        public void cbShowAbonent(Abonent abonent)
         {
            
         }

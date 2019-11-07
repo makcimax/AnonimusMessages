@@ -71,8 +71,7 @@
   <xs:element name="cbShowAbonent">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="abonentName" nillable="true" type="xs:string" />
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Server" minOccurs="0" name="abonentStatus" type="q4:Status" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Server" minOccurs="0" name="abonent" nillable="true" type="q4:Abonent" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

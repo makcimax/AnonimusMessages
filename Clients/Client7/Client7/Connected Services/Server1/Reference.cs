@@ -236,7 +236,7 @@ namespace Client7.Server1 {
         void cbSendMessage(string senderName, string message);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServer/cbShowAbonent")]
-        void cbShowAbonent(string abonentName, Client7.Server1.Status abonentStatus);
+        void cbShowAbonent(Client7.Server1.Abonent abonent);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

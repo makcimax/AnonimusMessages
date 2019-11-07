@@ -7,6 +7,6 @@ namespace Server
         void cbSendMessage(string senderName, string message);
         
         [OperationContract(IsOneWay = true)]
-        void cbShowAbonent(string abonentName, Status abonentStatus);
+        void cbShowAbonent(Abonent abonent);
     }
 }
