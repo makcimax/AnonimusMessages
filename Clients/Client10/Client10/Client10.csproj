@@ -73,6 +73,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Connected Services\Service\Client10.Service.Abonent.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Client10.Service.Message.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\Service\item.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -80,6 +86,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\Service\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Service\item3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\Service\Server.wsdl" />

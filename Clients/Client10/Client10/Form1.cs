@@ -44,7 +44,14 @@ namespace Client10
                 ShowButton.Enabled     = true;
                 this.Text              = userName;
 
-                client.ProvideMessage(id);
+                var h = client.ProvideMessage(id);
+                foreach (var index in h)
+                {
+                    OutputMessage.Text += index.SenderId + ": " + index.TextOfMessage + "\r";
+                   //клиент7: Console.WriteLine(allAbonents[index.SenderId].name + " : " + index.TextOfMessage);
+                }
+
+                
                 this.ActiveControl = InputMessage;
                 
             }
@@ -99,7 +106,7 @@ namespace Client10
         {
             OutputMessage.Text += senderName + ": " + message+"\r";
         }
-        public void cbShowAbonent(string abonentName, bool abonentStatus)
+        public void cbShowAbonent(string abonentName, Status abonentStatus)
         {
            
         }
