@@ -1,15 +1,14 @@
-﻿using System;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 
 namespace Server
 {
-   public class DataBase : DbContext
+    public class DataBase : DbContext
     {
-        public DataBase() : base("DbConnectionString")
+        public DataBase() : base("DbConnectionString1")
         {
         }
 
-        public DbSet<MessageDb> Messages
+        public DbSet<Message> Messages
         {
             get; set;
 

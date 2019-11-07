@@ -55,6 +55,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Connected Services\Server1\Client7.Server1.Abonent.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Server1\Client7.Server1.Message.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\Server1\item.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -62,6 +68,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\Server1\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Server1\item3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\Server1\Server.wsdl" />

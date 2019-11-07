@@ -15,41 +15,48 @@ namespace Client7
         {
             Console.WriteLine(senderName+ ":"+ message);
         }
-        public void cbShowAbonent(string abonentName, bool abonentStatus)
+        public void cbShowAbonent(string abonentName, Status abonentStatus)
         {
-            Console.WriteLine(abonentName+" "+abonentStatus);
-            
+            Console.WriteLine(abonentName+" " + abonentStatus);
         }
     }
 
-
-
-class Program
+    class Program
     {
         static void Main(string[] args)
         {
             InstanceContext instanceContext = new InstanceContext(new MessageCallback());
             var client = new ServerClient(instanceContext);
+            Console.WriteLine("Введите имя для подключения:");
             string name = Console.ReadLine();
             int connectId = client.Connect(name);
+            var allAbonents = client.ShowAbonents(connectId);
+
             while (true)
             {
                 string a = Console.ReadLine();
-                if (a == "s") client.ShowAbonents(connectId);
+                if (a == "s")
+                {
+                    allAbonents = client.ShowAbonents(connectId);
+                    foreach(var index in allAbonents)
+                    {
+                        Console.WriteLine(index.id + " "+ index.name + " " + index.status);
+                    }
+                }
                 if (a == "d") client.Disconnect(connectId);
                 if (a == "c") client.Connect(name);
                 if (a == "send") client.SendMessage(connectId, null, "Привет всем");
-                if (a == "p") client.ProvideMessage(connectId);
+                if (a == "p")
+                {
+                    var d = client.ProvideMessage(connectId);
+                    allAbonents = client.ShowAbonents(connectId);
+                    foreach (var index in d)
+                    {
+
+                        Console.WriteLine(allAbonents[index.SenderId].name + " : " +index.TextOfMessage);
+                    }
+                }
             }
-          
-
-
-
-
-            // string[] abc = { "Igor", "Petr" };
-            //client.SendMessage(connectId, abc, "hi");
-            //client.ShowAbonents(connectId);
-            // client.Disconnect(connectId);
         }
     }
 }

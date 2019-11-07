@@ -13,6 +13,7 @@
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Server" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IServer_SendMessage_InputMessage">
@@ -21,8 +22,14 @@
   <wsdl:message name="IServer_ShowAbonents_InputMessage">
     <wsdl:part name="parameters" element="tns:ShowAbonents" />
   </wsdl:message>
+  <wsdl:message name="IServer_ShowAbonents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ShowAbonentsResponse" />
+  </wsdl:message>
   <wsdl:message name="IServer_ProvideMessage_InputMessage">
     <wsdl:part name="parameters" element="tns:ProvideMessage" />
+  </wsdl:message>
+  <wsdl:message name="IServer_ProvideMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProvideMessageResponse" />
   </wsdl:message>
   <wsdl:message name="IServer_Connect_InputMessage">
     <wsdl:part name="parameters" element="tns:Connect" />
@@ -45,9 +52,11 @@
     </wsdl:operation>
     <wsdl:operation name="ShowAbonents">
       <wsdl:input wsaw:Action="http://tempuri.org/IServer/ShowAbonents" message="tns:IServer_ShowAbonents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServer/ShowAbonentsResponse" message="tns:IServer_ShowAbonents_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ProvideMessage">
       <wsdl:input wsaw:Action="http://tempuri.org/IServer/ProvideMessage" message="tns:IServer_ProvideMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServer/ProvideMessageResponse" message="tns:IServer_ProvideMessage_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Connect">
       <wsdl:input wsaw:Action="http://tempuri.org/IServer/Connect" message="tns:IServer_Connect_InputMessage" />
@@ -77,12 +86,18 @@
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ProvideMessage">
       <soap12:operation soapAction="http://tempuri.org/IServer/ProvideMessage" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Connect">
       <soap12:operation soapAction="http://tempuri.org/IServer/Connect" style="document" />

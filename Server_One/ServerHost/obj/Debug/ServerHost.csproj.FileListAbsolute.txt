@@ -112,3 +112,17 @@ C:\Users\Xf13\Desktop\REP\AnonimusMessages\Server_One\ServerHost\obj\Debug\Serve
 C:\Users\Xf13\Desktop\REP\AnonimusMessages\Server_One\ServerHost\obj\Debug\ServerHost.csproj.CopyComplete
 C:\Users\Xf13\Desktop\REP\AnonimusMessages\Server_One\ServerHost\obj\Debug\ServerHost.exe
 C:\Users\Xf13\Desktop\REP\AnonimusMessages\Server_One\ServerHost\obj\Debug\ServerHost.pdb
+C:\Users\Xf13\Desktop\AnonimusMessages-xf13\AnonimusMessages-xf13\Server_One\ServerHost\bin\Debug\ServerHost.exe.config
+C:\Users\Xf13\Desktop\AnonimusMessages-xf13\AnonimusMessages-xf13\Server_One\ServerHost\bin\Debug\ServerHost.exe
+C:\Users\Xf13\Desktop\AnonimusMessages-xf13\AnonimusMessages-xf13\Server_One\ServerHost\bin\Debug\ServerHost.pdb
+C:\Users\Xf13\Desktop\AnonimusMessages-xf13\AnonimusMessages-xf13\Server_One\ServerHost\bin\Debug\EntityFramework.dll
+C:\Users\Xf13\Desktop\AnonimusMessages-xf13\AnonimusMessages-xf13\Server_One\ServerHost\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Xf13\Desktop\AnonimusMessages-xf13\AnonimusMessages-xf13\Server_One\ServerHost\bin\Debug\Server.dll
+C:\Users\Xf13\Desktop\AnonimusMessages-xf13\AnonimusMessages-xf13\Server_One\ServerHost\bin\Debug\Server.pdb
+C:\Users\Xf13\Desktop\AnonimusMessages-xf13\AnonimusMessages-xf13\Server_One\ServerHost\bin\Debug\Server.dll.config
+C:\Users\Xf13\Desktop\AnonimusMessages-xf13\AnonimusMessages-xf13\Server_One\ServerHost\bin\Debug\EntityFramework.xml
+C:\Users\Xf13\Desktop\AnonimusMessages-xf13\AnonimusMessages-xf13\Server_One\ServerHost\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Xf13\Desktop\AnonimusMessages-xf13\AnonimusMessages-xf13\Server_One\ServerHost\obj\Debug\ServerHost.csprojAssemblyReference.cache
+C:\Users\Xf13\Desktop\AnonimusMessages-xf13\AnonimusMessages-xf13\Server_One\ServerHost\obj\Debug\ServerHost.csproj.CopyComplete
+C:\Users\Xf13\Desktop\AnonimusMessages-xf13\AnonimusMessages-xf13\Server_One\ServerHost\obj\Debug\ServerHost.exe
+C:\Users\Xf13\Desktop\AnonimusMessages-xf13\AnonimusMessages-xf13\Server_One\ServerHost\obj\Debug\ServerHost.pdb
