@@ -40,6 +40,7 @@
             this.SendPanel = new System.Windows.Forms.Panel();
             this.AbonentListPanel = new System.Windows.Forms.GroupBox();
             this.ShowButton = new System.Windows.Forms.Button();
+            this.ForAllCheck = new System.Windows.Forms.CheckBox();
             this.LoginPanel.SuspendLayout();
             this.SendPanel.SuspendLayout();
             this.AbonentListPanel.SuspendLayout();
@@ -98,8 +99,6 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.AbonentList.Enabled = false;
             this.AbonentList.FormattingEnabled = true;
-            this.AbonentList.Items.AddRange(new object[] {
-            "All"});
             this.AbonentList.Location = new System.Drawing.Point(12, 69);
             this.AbonentList.Name = "AbonentList";
             this.AbonentList.Size = new System.Drawing.Size(187, 364);
@@ -150,6 +149,7 @@
             // 
             // AbonentListPanel
             // 
+            this.AbonentListPanel.Controls.Add(this.ForAllCheck);
             this.AbonentListPanel.Controls.Add(this.ShowButton);
             this.AbonentListPanel.Location = new System.Drawing.Point(12, 13);
             this.AbonentListPanel.Name = "AbonentListPanel";
@@ -168,6 +168,17 @@
             this.ShowButton.Text = "Show";
             this.ShowButton.UseVisualStyleBackColor = true;
             this.ShowButton.Click += new System.EventHandler(this.ShowButton_Click);
+            // 
+            // ForAllCheck
+            // 
+            this.ForAllCheck.AutoSize = true;
+            this.ForAllCheck.Enabled = false;
+            this.ForAllCheck.Location = new System.Drawing.Point(101, 22);
+            this.ForAllCheck.Name = "ForAllCheck";
+            this.ForAllCheck.Size = new System.Drawing.Size(54, 17);
+            this.ForAllCheck.TabIndex = 1;
+            this.ForAllCheck.Text = "For all";
+            this.ForAllCheck.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -189,6 +200,7 @@
             this.LoginPanel.PerformLayout();
             this.SendPanel.ResumeLayout(false);
             this.AbonentListPanel.ResumeLayout(false);
+            this.AbonentListPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -205,6 +217,7 @@
         private System.Windows.Forms.Panel SendPanel;
         private System.Windows.Forms.GroupBox AbonentListPanel;
         private System.Windows.Forms.Button ShowButton;
+        private System.Windows.Forms.CheckBox ForAllCheck;
     }
 }
 
