@@ -5,6 +5,9 @@ using System.Windows.Forms;
 using Client10.Service;
 using System.ServiceModel;
 
+//TODO колл-бэк показа абонентов
+//     Мгновенная смена статуса пользователя у других(Спроси у Игоря лучше, чтобы потом не переделывать)
+
 namespace Client10
 {
     public partial class Form1 : Form, IServerCallback
@@ -125,7 +128,6 @@ namespace Client10
 
             return index;
         }
-
         private void DrawAbonentList(string userName = "<default>", Status userStatus = Status.Offline, Abonent[] allUsers = null)
         {
             if (allUsers == null)
