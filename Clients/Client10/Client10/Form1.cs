@@ -5,8 +5,11 @@ using System.Windows.Forms;
 using Client10.Service;
 using System.ServiceModel;
 
-//TODO колл-бэк показа абонентов
-//     Мгновенная смена статуса пользователя у других(Спроси у Игоря лучше, чтобы потом не переделывать)
+//TODO 
+//Колл-бэк показа абонентов
+//Мгновенная смена статуса пользователя у других(Спроси у Игоря лучше, чтобы потом не переделывать)
+//Из массива allAbonents сделать список (Подмуай что лучше)
+//Переделай DrawAbonentList — пусть очищает список в CheckList и пишет по-новой
 
 namespace Client10
 {
@@ -14,7 +17,7 @@ namespace Client10
     {
         int id;
         ServerClient client = null;
-        Abonent[] AllAbonents;
+        Abonent[] allAbonents;          
         string userName;
         Status status = Status.Offline;
         public Form1()
@@ -38,7 +41,7 @@ namespace Client10
                 userName = InputName.Text.Trim();
                 id = client.Connect(userName);
                 status = Status.Online;
-                AllAbonents = client.ShowAbonents(id);
+                allAbonents = client.ShowAbonents(id);
 
 
                 OutputMessage.Enabled  = true;
@@ -52,12 +55,14 @@ namespace Client10
                 this.Text              = userName;
 
                 //Метод работы со списком
-                DrawAbonentList(userName, status,AllAbonents);
+                DrawAbonentList(userName, status,allAbonents);
 
                 var h = client.ProvideMessage(id);
                 foreach (var index in h)
                 {
-                    OutputMessage.Text += index.RecipientId + ": " + index.TextOfMessage + "\r";//Почему здесь стоит ID?
+                    string recipient = AbonentList.Items[index.RecipientId].ToString();
+                    recipient = recipient.Substring(0, recipient.IndexOf(":"));
+                    OutputMessage.Text += recipient + ": " + index.TextOfMessage + "\r";
                    //клиент7: Console.WriteLine(allAbonents[index.SenderId].name + " : " + index.TextOfMessage);
                 }
 
@@ -74,7 +79,7 @@ namespace Client10
             status = Status.Offline;
 
             //Метод работы со списком
-            DrawAbonentList(userName, status,AllAbonents);
+            DrawAbonentList(userName, status,allAbonents);
 
             OutputMessage.Enabled  = false;
             OutputMessage.Clear();
@@ -97,9 +102,27 @@ namespace Client10
             }
             else
             {
-                client.SendMessage(id, null, InputMessage.Text);
-                InputMessage.Clear();
-                this.ActiveControl = InputMessage;
+                if (ForAllCheck.Checked)
+                {
+                    client.SendMessage(id, null, InputMessage.Text);
+                    InputMessage.Clear();
+                    this.ActiveControl = InputMessage;
+                }
+                else 
+                {
+                    List<int> destination = new List<int>();
+                    var selectedUsers = AbonentList.CheckedIndices;
+
+                    foreach(var index in selectedUsers)
+                    {
+                        int tmpUserIndex = Convert.ToInt32(index.ToString());
+                        destination.Add(tmpUserIndex);
+                        
+                    }
+                    
+                    client.SendMessage(id, destination.ToArray(), InputMessage.Text);
+                    
+                }
             }   
         }
         private void ExitMethod()
@@ -128,6 +151,8 @@ namespace Client10
 
             return index;
         }
+
+        
         private void DrawAbonentList(string userName = "<default>", Status userStatus = Status.Offline, Abonent[] allUsers = null)
         {
             if (allUsers == null)
@@ -146,7 +171,8 @@ namespace Client10
                     }
                     else
                     {
-                        AbonentList.Items.Add(abonent.name + ": " + abonent.status);
+                        if (userName != "<default>")
+                            AbonentList.Items.Add(abonent.name + ": " + abonent.status);
                     }
                 }
 
@@ -156,7 +182,8 @@ namespace Client10
                 }
                 else
                 {
-                    AbonentList.Items.Add(userName + ": " + userStatus);
+                    if (userName != "<default>")
+                        AbonentList.Items.Add(userName + ": " + userStatus);
                 }
 
 
@@ -218,7 +245,9 @@ namespace Client10
 
         private void ShowButton_Click(object sender, EventArgs e)
         {
-            client.ShowAbonents(id);
+            allAbonents = client.ShowAbonents(id);
+            DrawAbonentList(allUsers:allAbonents);
+            //MessageBox.Show("Отрисовал, проверяй");
         }
     }
 }

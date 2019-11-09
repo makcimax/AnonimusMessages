@@ -126,3 +126,17 @@ C:\Users\Xf13\Desktop\AnonimusMessages-xf13\AnonimusMessages-xf13\Server_One\Ser
 C:\Users\Xf13\Desktop\AnonimusMessages-xf13\AnonimusMessages-xf13\Server_One\ServerHost\obj\Debug\ServerHost.csproj.CopyComplete
 C:\Users\Xf13\Desktop\AnonimusMessages-xf13\AnonimusMessages-xf13\Server_One\ServerHost\obj\Debug\ServerHost.exe
 C:\Users\Xf13\Desktop\AnonimusMessages-xf13\AnonimusMessages-xf13\Server_One\ServerHost\obj\Debug\ServerHost.pdb
+D:\Projects\C#\Longhome task\AnonimusMessages\Server_One\ServerHost\bin\Debug\ServerHost.exe.config
+D:\Projects\C#\Longhome task\AnonimusMessages\Server_One\ServerHost\bin\Debug\ServerHost.exe
+D:\Projects\C#\Longhome task\AnonimusMessages\Server_One\ServerHost\bin\Debug\ServerHost.pdb
+D:\Projects\C#\Longhome task\AnonimusMessages\Server_One\ServerHost\bin\Debug\EntityFramework.dll
+D:\Projects\C#\Longhome task\AnonimusMessages\Server_One\ServerHost\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\C#\Longhome task\AnonimusMessages\Server_One\ServerHost\bin\Debug\Server.dll
+D:\Projects\C#\Longhome task\AnonimusMessages\Server_One\ServerHost\bin\Debug\Server.pdb
+D:\Projects\C#\Longhome task\AnonimusMessages\Server_One\ServerHost\bin\Debug\Server.dll.config
+D:\Projects\C#\Longhome task\AnonimusMessages\Server_One\ServerHost\bin\Debug\EntityFramework.xml
+D:\Projects\C#\Longhome task\AnonimusMessages\Server_One\ServerHost\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\C#\Longhome task\AnonimusMessages\Server_One\ServerHost\obj\Debug\ServerHost.csprojAssemblyReference.cache
+D:\Projects\C#\Longhome task\AnonimusMessages\Server_One\ServerHost\obj\Debug\ServerHost.csproj.CopyComplete
+D:\Projects\C#\Longhome task\AnonimusMessages\Server_One\ServerHost\obj\Debug\ServerHost.exe
+D:\Projects\C#\Longhome task\AnonimusMessages\Server_One\ServerHost\obj\Debug\ServerHost.pdb

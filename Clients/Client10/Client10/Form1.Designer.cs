@@ -39,8 +39,8 @@
             this.LoginPanel = new System.Windows.Forms.GroupBox();
             this.SendPanel = new System.Windows.Forms.Panel();
             this.AbonentListPanel = new System.Windows.Forms.GroupBox();
-            this.ShowButton = new System.Windows.Forms.Button();
             this.ForAllCheck = new System.Windows.Forms.CheckBox();
+            this.ShowButton = new System.Windows.Forms.Button();
             this.LoginPanel.SuspendLayout();
             this.SendPanel.SuspendLayout();
             this.AbonentListPanel.SuspendLayout();
@@ -97,6 +97,7 @@
             // 
             this.AbonentList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.AbonentList.CheckOnClick = true;
             this.AbonentList.Enabled = false;
             this.AbonentList.FormattingEnabled = true;
             this.AbonentList.Location = new System.Drawing.Point(12, 69);
@@ -158,17 +159,6 @@
             this.AbonentListPanel.TabStop = false;
             this.AbonentListPanel.Text = "Abonents";
             // 
-            // ShowButton
-            // 
-            this.ShowButton.Enabled = false;
-            this.ShowButton.Location = new System.Drawing.Point(6, 19);
-            this.ShowButton.Name = "ShowButton";
-            this.ShowButton.Size = new System.Drawing.Size(75, 23);
-            this.ShowButton.TabIndex = 0;
-            this.ShowButton.Text = "Show";
-            this.ShowButton.UseVisualStyleBackColor = true;
-            this.ShowButton.Click += new System.EventHandler(this.ShowButton_Click);
-            // 
             // ForAllCheck
             // 
             this.ForAllCheck.AutoSize = true;
@@ -179,6 +169,17 @@
             this.ForAllCheck.TabIndex = 1;
             this.ForAllCheck.Text = "For all";
             this.ForAllCheck.UseVisualStyleBackColor = true;
+            // 
+            // ShowButton
+            // 
+            this.ShowButton.Enabled = false;
+            this.ShowButton.Location = new System.Drawing.Point(6, 19);
+            this.ShowButton.Name = "ShowButton";
+            this.ShowButton.Size = new System.Drawing.Size(75, 23);
+            this.ShowButton.TabIndex = 0;
+            this.ShowButton.Text = "Show";
+            this.ShowButton.UseVisualStyleBackColor = true;
+            this.ShowButton.Click += new System.EventHandler(this.ShowButton_Click);
             // 
             // Form1
             // 
