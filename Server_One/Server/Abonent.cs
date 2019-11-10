@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
 
 namespace Server
 {
@@ -11,13 +12,13 @@ namespace Server
     [DataContract]
     public class Abonent
     {
-        [DataMember]
-        public int id;
+        [DataMember,Key]
+        public int id { get; set; }
 
         [DataMember]
-        public string name;
+        public string name { get; set; }
 
         [DataMember]
-        public Status status;
+        public Status status { get; set; }
     }
 }

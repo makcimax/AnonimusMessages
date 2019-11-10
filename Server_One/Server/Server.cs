@@ -11,15 +11,18 @@ namespace Server
     {
         private List<Abonent> allAbonents;
         private Dictionary<int, IMessageCallback> links;
+        //private Dictionary<int, Abonent> allAbonents;
         private ILogger logger;
         private int idAbonent;
 
         public Server()
         {
-            allAbonents = new List<Abonent>();
+         //   allAbonents = new List<Abonent>();
+
+            allAbonents = GetAbonentFromDb();
             links = new Dictionary<int, IMessageCallback>();
             logger = new ConsoleLogger();
-            idAbonent = 0;
+            idAbonent = allAbonents.Count+1;
         }
 
         private void PushMessage(int senderId, int recipientId, string textOfMessage)
@@ -29,7 +32,7 @@ namespace Server
                 var message = new Message()
                 {
                     SenderId = senderId,
-                    RecipientId = recipientId,
+                    RecipientId = recipientId,          
                     TextOfMessage = textOfMessage
                 };
 
@@ -97,6 +100,34 @@ namespace Server
             return PopMessage(allAbonents[id].id); 
         }
 
+
+        private void AddAbonentInDb(int _id,string _name)
+        {
+            using (var context = new DataBaseOfAbonents())
+            {
+
+                var abonent = new Abonent
+                {
+                    id = _id,
+                    name = _name,
+                    status = Status.Offline
+                };
+
+                context.Abonents.Add(abonent);
+                context.SaveChanges();
+            }
+        }
+        private List<Abonent> GetAbonentFromDb()
+        {
+            using (var context = new DataBaseOfAbonents())
+            {
+                List<Abonent> abonentsInDb = context.Abonents.ToList();
+
+                return abonentsInDb;
+            }
+        }
+
+
         public int Connect(string name)
         {
             Abonent abonent;
@@ -123,6 +154,9 @@ namespace Server
                     name = name,
                     status = Status.Online 
                 };
+
+                AddAbonentInDb(abonent.id,abonent.name);
+
                 allAbonents.Add(abonent);
                 links[abonent.id] = OperationContext.Current.GetCallbackChannel<IMessageCallback>();
             }
