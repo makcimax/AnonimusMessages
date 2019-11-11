@@ -10,7 +10,7 @@ namespace Server
         void SendMessage(int senderId, List<int> recipientsId, string message);
 
         [OperationContract(IsOneWay = false)]
-        List<Abonent> ShowAbonents(int id);
+        Dictionary<int, Abonent> ShowAbonents(int id);
 
         [OperationContract(IsOneWay = false)]
         List<Message> ProvideMessage(int id);

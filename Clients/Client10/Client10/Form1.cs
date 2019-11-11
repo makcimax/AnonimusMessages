@@ -17,7 +17,7 @@ namespace Client10
     {
         int id;
         ServerClient client = null;
-        Abonent[] allAbonents;          
+        Dictionary<int, Abonent> allAbonents;          
         string userName;
         Status status = Status.Offline;
         public Form1()
@@ -153,7 +153,7 @@ namespace Client10
         }
 
         
-        private void DrawAbonentList(string userName = "<default>", Status userStatus = Status.Offline, Abonent[] allUsers = null)
+        private void DrawAbonentList(string userName = "<default>", Status userStatus = Status.Offline, Dictionary<int, Abonent> allUsers = null)
         {
             if (allUsers == null)
             {
@@ -163,16 +163,16 @@ namespace Client10
             {
                 int index;
                
-                foreach(Abonent abonent in allUsers)
+                foreach(var abonent in allUsers)
                 {
-                    if ((index = in_List(abonent.name)) != -1)
+                    if ((index = in_List(abonent.Value.name)) != -1)
                     {
-                        AbonentList.Items[index] = abonent.name + ": " + abonent.status;
+                        AbonentList.Items[index] = abonent.Value.name + ": " + abonent.Value.status;
                     }
                     else
                     {
                         if (userName != "<default>")
-                            AbonentList.Items.Add(abonent.name + ": " + abonent.status);
+                            AbonentList.Items.Add(abonent.Value.name + ": " + abonent.Value.status);
                     }
                 }
 

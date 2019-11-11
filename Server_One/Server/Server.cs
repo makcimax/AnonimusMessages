@@ -9,18 +9,25 @@ namespace Server
         ConcurrencyMode = ConcurrencyMode.Reentrant)]
     public class Server : IServer
     {
-        private List<Abonent> allAbonents;
+       // private List<Abonent> allAbonents;
         private Dictionary<int, IMessageCallback> links;
-        //private Dictionary<int, Abonent> allAbonents;
+        private Dictionary<int, Abonent> allAbonents;
         private ILogger logger;
         private int idAbonent;
 
         public Server()
         {
-         //   allAbonents = new List<Abonent>();
+         //  allAbonents = new List<Abonent>();
 
             allAbonents = GetAbonentFromDb();
+
+
+
             links = new Dictionary<int, IMessageCallback>();
+            foreach (var abonent in allAbonents)
+            links[abonent.Key] = null;
+
+                //new Dictionary<int, IMessageCallback>();
             logger = new ConsoleLogger();
             idAbonent = allAbonents.Count+1;
         }
@@ -57,7 +64,7 @@ namespace Server
 
         public void SendMessage(int senderId, List<int> recipientNames, string message)
         {
-            Abonent sender = allAbonents.Find(ab => ab.id == senderId);
+            Abonent sender = allAbonents[senderId];
             if (recipientNames == null) //оправить всем
             {
                 foreach (var index in links.Keys)
@@ -89,14 +96,17 @@ namespace Server
                 }
             }
         }
-        public List<Abonent> ShowAbonents(int id) //убрать аргумент
+        public Dictionary<int, Abonent> ShowAbonents(int id) //убрать аргумент
         {
+
+
             return allAbonents;
+
+         //  return null;
         }
 
         public List<Message> ProvideMessage(int id)
-        {
-           // Abonent recipient = allAbonents.Find(ab => ab.id == id);
+        {   
             return PopMessage(allAbonents[id].id); 
         }
 
@@ -117,11 +127,15 @@ namespace Server
                 context.SaveChanges();
             }
         }
-        private List<Abonent> GetAbonentFromDb()
+        private Dictionary<int, Abonent> GetAbonentFromDb()
         {
             using (var context = new DataBaseOfAbonents())
             {
-                List<Abonent> abonentsInDb = context.Abonents.ToList();
+
+
+               // List<Abonent> abonentsInDb = context.Abonents.ToList();
+
+                Dictionary<int,Abonent> abonentsInDb = context.Abonents.ToDictionary(x => x.id , x => x);
 
                 return abonentsInDb;
             }
@@ -132,9 +146,9 @@ namespace Server
         {
             Abonent abonent;
             string typeConnect;
-            if (allAbonents.Exists(ab => ab.name == name))
+            if (allAbonents.ToList().Exists(ab => ab.Value.name == name))
             {
-                abonent = allAbonents.Find(ab => ab.name == name);
+                abonent = allAbonents.ToList().Find(ab => ab.Value.name == name).Value;
                 if (abonent.status == Status.Online)
                 {
                     logger.Logging("Попытка повторного входа!");
@@ -150,14 +164,14 @@ namespace Server
                 typeConnect = "новый ";
                 abonent = new Abonent()
                 {
-                    id = idAbonent++,
+                    id = idAbonent,
                     name = name,
                     status = Status.Online 
                 };
 
                 AddAbonentInDb(abonent.id,abonent.name);
 
-                allAbonents.Add(abonent);
+                allAbonents.Add(idAbonent++,abonent);
                 links[abonent.id] = OperationContext.Current.GetCallbackChannel<IMessageCallback>();
             }
 
@@ -176,7 +190,7 @@ namespace Server
         }
         public void Disconnect(int id)
         {
-            Abonent abonent = allAbonents.Find(ab => ab.id == id);
+            Abonent abonent = allAbonents[id];
             if(abonent.status == Status.Offline)
             {
                 logger.Logging("Клиент уже отключен");

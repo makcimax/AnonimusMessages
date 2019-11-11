@@ -90,17 +90,6 @@ namespace Client10.Service {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Status", Namespace="http://schemas.datacontract.org/2004/07/Server")]
-    public enum Status : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Online = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Offline = 1,
-    }
-    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Message", Namespace="http://schemas.datacontract.org/2004/07/Server")]
@@ -194,6 +183,17 @@ namespace Client10.Service {
         }
     }
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Status", Namespace="http://schemas.datacontract.org/2004/07/Server")]
+    public enum Status : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Online = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Offline = 1,
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Service.IServer", CallbackContract=typeof(Client10.Service.IServerCallback))]
     public interface IServer {
@@ -205,10 +205,10 @@ namespace Client10.Service {
         System.Threading.Tasks.Task SendMessageAsync(int senderId, int[] recipientsId, string message);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServer/ShowAbonents", ReplyAction="http://tempuri.org/IServer/ShowAbonentsResponse")]
-        Client10.Service.Abonent[] ShowAbonents(int id);
+        System.Collections.Generic.Dictionary<int, Client10.Service.Abonent> ShowAbonents(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServer/ShowAbonents", ReplyAction="http://tempuri.org/IServer/ShowAbonentsResponse")]
-        System.Threading.Tasks.Task<Client10.Service.Abonent[]> ShowAbonentsAsync(int id);
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, Client10.Service.Abonent>> ShowAbonentsAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServer/ProvideMessage", ReplyAction="http://tempuri.org/IServer/ProvideMessageResponse")]
         Client10.Service.Message[] ProvideMessage(int id);
@@ -275,11 +275,11 @@ namespace Client10.Service {
             return base.Channel.SendMessageAsync(senderId, recipientsId, message);
         }
         
-        public Client10.Service.Abonent[] ShowAbonents(int id) {
+        public System.Collections.Generic.Dictionary<int, Client10.Service.Abonent> ShowAbonents(int id) {
             return base.Channel.ShowAbonents(id);
         }
         
-        public System.Threading.Tasks.Task<Client10.Service.Abonent[]> ShowAbonentsAsync(int id) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, Client10.Service.Abonent>> ShowAbonentsAsync(int id) {
             return base.Channel.ShowAbonentsAsync(id);
         }
         

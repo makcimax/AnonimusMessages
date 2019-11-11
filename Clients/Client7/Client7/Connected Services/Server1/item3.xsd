@@ -21,7 +21,7 @@
   <xs:element name="ShowAbonentsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Server" minOccurs="0" name="ShowAbonentsResult" nillable="true" type="q2:ArrayOfAbonent" />
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ShowAbonentsResult" nillable="true" type="q2:ArrayOfKeyValueOfintAbonentmdr6at3Q" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

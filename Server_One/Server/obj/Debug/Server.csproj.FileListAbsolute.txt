@@ -107,7 +107,6 @@ D:\Projects\C#\Longhome task\AnonimusMessages\Server_One\Server\bin\Debug\Entity
 D:\Projects\C#\Longhome task\AnonimusMessages\Server_One\Server\bin\Debug\EntityFramework.xml
 D:\Projects\C#\Longhome task\AnonimusMessages\Server_One\Server\bin\Debug\EntityFramework.SqlServer.xml
 D:\Projects\C#\Longhome task\AnonimusMessages\Server_One\Server\obj\Debug\Server.csproj.CopyComplete
-C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Server_One\Server\obj\Debug\Server.csprojAssemblyReference.cache
 C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Server_One\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
 C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Server_One\Server\obj\Debug\Server.dll
 C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Server_One\Server\obj\Debug\Server.pdb
@@ -119,3 +118,4 @@ C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Server_One\Server\bin\Debug\Entity
 C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Server_One\Server\bin\Debug\EntityFramework.xml
 C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Server_One\Server\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Server_One\Server\obj\Debug\Server.csproj.CopyComplete
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Server_One\Server\obj\Debug\Server.csprojAssemblyReference.cache

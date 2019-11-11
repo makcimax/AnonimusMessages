@@ -40,7 +40,7 @@ namespace Client7
                     allAbonents = client.ShowAbonents(connectId);
                     foreach(var index in allAbonents)
                     {
-                        Console.WriteLine(index.id + " "+ index.name + " " + index.status);
+                        Console.WriteLine(index.Value.id + " "+ index.Value.name + " " + index.Value.status);
                     }
                 }
                 if (a == "d") client.Disconnect(connectId);

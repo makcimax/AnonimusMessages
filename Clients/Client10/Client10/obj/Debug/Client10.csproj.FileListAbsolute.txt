@@ -32,3 +32,13 @@ D:\Projects\C#\Longhome task\AnonimusMessages\Clients\Client10\Client10\obj\Debu
 D:\Projects\C#\Longhome task\AnonimusMessages\Clients\Client10\Client10\obj\Debug\Client10.csproj.GenerateResource.cache
 D:\Projects\C#\Longhome task\AnonimusMessages\Clients\Client10\Client10\obj\Debug\Client10.exe
 D:\Projects\C#\Longhome task\AnonimusMessages\Clients\Client10\Client10\obj\Debug\Client10.pdb
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client10\Client10\bin\Debug\Client10.exe.config
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client10\Client10\bin\Debug\Client10.exe
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client10\Client10\bin\Debug\Client10.pdb
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client10\Client10\obj\Debug\Client10.csprojAssemblyReference.cache
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client10\Client10\obj\Debug\Client10.Form1.resources
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client10\Client10\obj\Debug\Client10.Properties.Resources.resources
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client10\Client10\obj\Debug\Client10.csproj.GenerateResource.cache
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client10\Client10\obj\Debug\Client10.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client10\Client10\obj\Debug\Client10.exe
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client10\Client10\obj\Debug\Client10.pdb
