@@ -9,7 +9,6 @@ using System.ServiceModel;
 //Колл-бэк показа абонентов
 //Мгновенная смена статуса пользователя у других(Спроси у Игоря лучше, чтобы потом не переделывать)
 //Из массива allAbonents сделать список (Подмуай что лучше)
-//Переделай DrawAbonentList — пусть очищает список в CheckList и пишет по-новой
 
 namespace Client10
 {
@@ -93,7 +92,7 @@ namespace Client10
             this.Text              = "Login";
 
         }
-
+        
         private void SendMethod()
         {
             if (InputMessage.Text.Trim() == "")
@@ -111,9 +110,8 @@ namespace Client10
                 else 
                 {
                     List<int> destination = new List<int>();
-                    var selectedUsers = AbonentList.CheckedIndices;
 
-                    foreach(var index in selectedUsers)
+                    foreach(var index in AbonentList.CheckedIndices)
                     {
                         int tmpUserIndex = Convert.ToInt32(index.ToString());
                         destination.Add(tmpUserIndex);
@@ -123,8 +121,16 @@ namespace Client10
                     client.SendMessage(id, destination.ToArray(), InputMessage.Text);
                     
                 }
-            }   
+            }
+
+            foreach (var index in AbonentList.CheckedIndices)
+            {
+                int tmpUserIndex = Convert.ToInt32(index.ToString());
+                AbonentList.SetItemCheckState(tmpUserIndex, CheckState.Unchecked);
+            }
         }
+        
+
         private void ExitMethod()
         {
             if (status == Status.Online)
@@ -141,53 +147,32 @@ namespace Client10
         private int in_List(string userName)
         {
             int index = -1;
-            for (int i = 0; i<AbonentList.Items.Count;++i)
+            for (int i = 0; i < AbonentList.Items.Count; ++i)
             {
                 string tmp = AbonentList.Items[i].ToString();
                 tmp = tmp.Substring(0, tmp.IndexOf(':'));
-                if (tmp  == userName)
+                if (tmp == userName)
                     index = i;
             }
 
             return index;
         }
 
-        
-        private void DrawAbonentList(string userName = "<default>", Status userStatus = Status.Offline, Dictionary<int, Abonent> allUsers = null)
-        {
-            if (allUsers == null)
-            {
-                AbonentList.Items.Add(userName + ": " + userStatus);
-            }
-            else
-            {
-                int index;
-               
-                foreach(var abonent in allUsers)
-                {
-                    if ((index = in_List(abonent.Value.name)) != -1)
-                    {
-                        AbonentList.Items[index] = abonent.Value.name + ": " + abonent.Value.status;
-                    }
-                    else
-                    {
-                        if (userName != "<default>")
-                            AbonentList.Items.Add(abonent.Value.name + ": " + abonent.Value.status);
-                    }
-                }
 
-                if ((index = in_List(userName)) != -1)
+        private void DrawAbonentList(string userName = "<default>", Status userStatus = Status.Offline, Dictionary<int, Abonent> allUsers = null)
+        {     
+            foreach(int userId in allUsers.Keys)
+            {
+                int tmpUserIndex = in_List(allUsers[userId].name);
+                if (tmpUserIndex != -1)
                 {
-                    AbonentList.Items[index] = userName + ": " + userStatus;
+                    AbonentList.Items[tmpUserIndex] = allUsers[userId].name + ": " + allUsers[userId].status;
                 }
                 else
                 {
-                    if (userName != "<default>")
-                        AbonentList.Items.Add(userName + ": " + userStatus);
+                    AbonentList.Items.Add(allUsers[userId].name + ": " + allUsers[userId].status);
                 }
-
-
-            }
+            }         
         }
 
         public void cbSendMessage(string senderName, string message)
