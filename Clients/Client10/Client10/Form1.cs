@@ -92,7 +92,19 @@ namespace Client10
             this.Text              = "Login";
 
         }
-        
+
+        private int GetId(string name, Dictionary<int, Abonent> allUsers)
+        {
+            int id = 0;
+            foreach(int ID in allUsers.Keys)
+            {
+                if (allUsers[ID].name == name)
+                    id = ID;
+            }
+
+            return id;
+        }
+
         private void SendMethod()
         {
             if (InputMessage.Text.Trim() == "")
@@ -114,7 +126,10 @@ namespace Client10
                     foreach(var index in AbonentList.CheckedIndices)
                     {
                         int tmpUserIndex = Convert.ToInt32(index.ToString());
-                        destination.Add(tmpUserIndex);
+                        string selectedUser = AbonentList.Items[tmpUserIndex].ToString();
+                        string tmpName = selectedUser.Substring(0, selectedUser.IndexOf(":"));
+
+                        destination.Add(GetId(tmpName,allAbonents));
                         
                     }
                     
