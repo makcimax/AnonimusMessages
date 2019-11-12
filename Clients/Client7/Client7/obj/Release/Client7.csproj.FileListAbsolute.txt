@@ -1,0 +1,7 @@
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client7\Client7\bin\Release\Client7.exe.config
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client7\Client7\bin\Release\Client7.exe
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client7\Client7\bin\Release\Client7.pdb
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client7\Client7\obj\Release\Client7.csprojAssemblyReference.cache
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client7\Client7\obj\Release\Client7.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client7\Client7\obj\Release\Client7.exe
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client7\Client7\obj\Release\Client7.pdb

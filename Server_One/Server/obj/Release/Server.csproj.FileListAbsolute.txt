@@ -1,0 +1,12 @@
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Server_One\Server\bin\Release\Server.dll.config
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Server_One\Server\bin\Release\Server.dll
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Server_One\Server\bin\Release\Server.pdb
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Server_One\Server\bin\Release\EntityFramework.dll
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Server_One\Server\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Server_One\Server\bin\Release\EntityFramework.xml
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Server_One\Server\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Server_One\Server\obj\Release\Server.csprojAssemblyReference.cache
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Server_One\Server\obj\Release\Server.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Server_One\Server\obj\Release\Server.csproj.CopyComplete
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Server_One\Server\obj\Release\Server.dll
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Server_One\Server\obj\Release\Server.pdb
