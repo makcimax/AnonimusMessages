@@ -26,7 +26,7 @@ namespace Server
             idAbonent = allAbonents.Count+1;
         }
 
-        private void PushMessage(int senderId, int recipientId, string textOfMessage)
+        private void AddMessageToDb(int senderId, int recipientId, string textOfMessage)
         {
             using (var context = new DataBase())
             {
@@ -42,7 +42,7 @@ namespace Server
             }
         }
 
-        private List<Message> PopMessage(int recipientId)
+        private List<Message> TakeMessagesFromDb(int recipientId)
         {
             using (var context = new DataBase())
             {
@@ -69,7 +69,7 @@ namespace Server
                     }
                     else
                     {
-                        PushMessage(sender.id, allAbonents[index].id, message);
+                        AddMessageToDb(sender.id, allAbonents[index].id, message);
                     }
                 }
 
@@ -85,7 +85,7 @@ namespace Server
                     }
                     else
                     {
-                        PushMessage(senderId, index, message); //сохранить сообщение в базу данных
+                        AddMessageToDb(senderId, index, message); //сохранить сообщение в базу данных
                     }
                 }
             }
@@ -101,7 +101,7 @@ namespace Server
 
         public List<Message> ProvideMessage(int id)
         {   
-            return PopMessage(allAbonents[id].id); 
+            return TakeMessagesFromDb(allAbonents[id].id); 
         }
 
 
@@ -126,7 +126,6 @@ namespace Server
             using (var context = new DataBaseOfAbonents())
             {
 
-               // List<Abonent> abonentsInDb = context.Abonents.ToList();
                 Dictionary<int,Abonent> abonentsInDb = context.Abonents.ToDictionary(x => x.id , x => x);
 
                 return abonentsInDb;
@@ -138,7 +137,7 @@ namespace Server
         {
             Abonent abonent;
             string typeConnect;
-            if (allAbonents.ToList().Exists(ab => ab.Value.name == name))
+            if (allAbonents.ToList().Exists(ab => ab.Value.name == name))    
             {
                 abonent = allAbonents.ToList().Find(ab => ab.Value.name == name).Value;
                 if (abonent.status == Status.Online)
@@ -172,6 +171,8 @@ namespace Server
             {
                 if (allAbonents[index].status == Status.Online && allAbonents[index].id != abonent.id)
                 {
+
+                    var i = links[index];
                     links[index].cbShowAbonent(abonent);
                 }
             }
