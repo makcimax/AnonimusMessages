@@ -97,6 +97,7 @@
             // 
             this.AbonentList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.AbonentList.BackColor = System.Drawing.Color.White;
             this.AbonentList.CheckOnClick = true;
             this.AbonentList.Enabled = false;
             this.AbonentList.FormattingEnabled = true;
