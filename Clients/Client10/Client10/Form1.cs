@@ -8,7 +8,6 @@ using System.ServiceModel;
 //TODO 
 //Колл-бэк показа абонентов
 //Мгновенная смена статуса пользователя у других(Спроси у Игоря лучше, чтобы потом не переделывать)
-//Из массива allAbonents сделать список (Подмуай что лучше)
 
 namespace Client10
 {
@@ -59,8 +58,11 @@ namespace Client10
                 var h = client.ProvideMessage(id);
                 foreach (var index in h)
                 {
-                    string recipient = AbonentList.Items[index.RecipientId].ToString();
-                    recipient = recipient.Substring(0, recipient.IndexOf(":"));
+                    //string recipient = AbonentList.Items[index.RecipientId].ToString();
+                    //recipient = recipient.Substring(0, recipient.IndexOf(":"));
+
+                    string recipient = allAbonents[index.SenderId].name;
+
                     OutputMessage.Text += recipient + ": " + index.TextOfMessage + "\r";
                    //клиент7: Console.WriteLine(allAbonents[index.SenderId].name + " : " + index.TextOfMessage);
                 }
@@ -173,7 +175,6 @@ namespace Client10
             return index;
         }
 
-
         private void DrawAbonentList(string userName = "<default>", Status userStatus = Status.Offline, Dictionary<int, Abonent> allUsers = null)
         {     
             foreach(int userId in allUsers.Keys)
@@ -181,6 +182,7 @@ namespace Client10
                 int tmpUserIndex = in_List(allUsers[userId].name);
                 if (tmpUserIndex != -1)
                 {
+                    
                     AbonentList.Items[tmpUserIndex] = allUsers[userId].name + ": " + allUsers[userId].status;
                 }
                 else
