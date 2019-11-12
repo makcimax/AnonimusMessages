@@ -7,3 +7,13 @@ D:\Projects\C#\Longhome task\AnonimusMessages\Clients\Client10\Client10\obj\Rele
 D:\Projects\C#\Longhome task\AnonimusMessages\Clients\Client10\Client10\obj\Release\Client10.csproj.GenerateResource.cache
 D:\Projects\C#\Longhome task\AnonimusMessages\Clients\Client10\Client10\obj\Release\Client10.exe
 D:\Projects\C#\Longhome task\AnonimusMessages\Clients\Client10\Client10\obj\Release\Client10.pdb
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client10\Client10\bin\Release\Client10.exe.config
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client10\Client10\bin\Release\Client10.exe
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client10\Client10\bin\Release\Client10.pdb
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client10\Client10\obj\Release\Client10.csprojAssemblyReference.cache
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client10\Client10\obj\Release\Client10.Form1.resources
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client10\Client10\obj\Release\Client10.Properties.Resources.resources
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client10\Client10\obj\Release\Client10.csproj.GenerateResource.cache
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client10\Client10\obj\Release\Client10.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client10\Client10\obj\Release\Client10.exe
+C:\Users\PC\Desktop\10_11_19\AnonimusMessages\Clients\Client10\Client10\obj\Release\Client10.pdb

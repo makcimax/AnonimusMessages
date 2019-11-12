@@ -9,7 +9,6 @@ namespace Server
         ConcurrencyMode = ConcurrencyMode.Reentrant)]
     public class Server : IServer
     {
-       // private List<Abonent> allAbonents;
         private Dictionary<int, IMessageCallback> links;
         private Dictionary<int, Abonent> allAbonents;
         private ILogger logger;
@@ -17,17 +16,12 @@ namespace Server
 
         public Server()
         {
-         //  allAbonents = new List<Abonent>();
-
+   
             allAbonents = GetAbonentFromDb();
-
-
 
             links = new Dictionary<int, IMessageCallback>();
             foreach (var abonent in allAbonents)
             links[abonent.Key] = null;
-
-                //new Dictionary<int, IMessageCallback>();
             logger = new ConsoleLogger();
             idAbonent = allAbonents.Count+1;
         }
@@ -132,9 +126,7 @@ namespace Server
             using (var context = new DataBaseOfAbonents())
             {
 
-
                // List<Abonent> abonentsInDb = context.Abonents.ToList();
-
                 Dictionary<int,Abonent> abonentsInDb = context.Abonents.ToDictionary(x => x.id , x => x);
 
                 return abonentsInDb;
